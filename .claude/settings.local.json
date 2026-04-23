@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh --version)",
+      "Bash(netlify --version)",
+      "Bash(git --version)",
+      "Bash(npm --version)",
+      "Bash(winget --version)",
+      "Bash(curl --version)",
+      "Bash(npm install *)",
+      "Bash(winget install *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh auth *)",
+      "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-team-services-reader",
+      "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-project-services-updater"
+    ]
+  }
+}
