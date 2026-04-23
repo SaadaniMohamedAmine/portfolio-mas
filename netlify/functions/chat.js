@@ -77,13 +77,13 @@ exports.handler = async (event) => {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       body: JSON.stringify({
-        reply: "The AI assistant isn't configured yet — the API key is missing. In the meantime, reach out to Amine directly at mohamedaminesaadani79@gmail.com! 😊"
+        reply: "The AI assistant isn't configured yet. In the meantime, reach out to Amine directly at mohamedaminesaadani79@gmail.com! 😊"
       })
     };
   }
@@ -97,29 +97,27 @@ exports.handler = async (event) => {
   }
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+
+    const res = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 350,
-        system: SYSTEM_PROMPT,
-        messages: [{ role: 'user', content: message.slice(0, 500) }]
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: [{ role: 'user', parts: [{ text: message.slice(0, 500) }] }],
+        generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
       })
     });
 
     if (!res.ok) {
       const err = await res.text();
-      console.error('Anthropic API error:', res.status, err);
+      console.error('Gemini API error:', res.status, err);
       throw new Error(`API ${res.status}`);
     }
 
     const data = await res.json();
-    const reply = data?.content?.[0]?.text ?? "I couldn't generate a response. Please try again!";
+    const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text
+      ?? "I couldn't generate a response. Please try again!";
 
     return {
       statusCode: 200,
@@ -132,7 +130,7 @@ exports.handler = async (event) => {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       body: JSON.stringify({
-        reply: "Something went wrong on my end. Please contact Amine directly at mohamedaminesaadani79@gmail.com or via LinkedIn!"
+        reply: "Something went wrong. Feel free to contact Amine directly at mohamedaminesaadani79@gmail.com or via LinkedIn!"
       })
     };
   }
