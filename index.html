@@ -22,15 +22,72 @@
 
   /* NAV */
   nav {
-    position:fixed; top:0; width:100%; z-index:100;
-    background:rgba(13,13,13,0.92); backdrop-filter:blur(12px);
+    position:fixed; top:0; width:100%; z-index:1000;
+    background:rgba(13,13,13,0.95); backdrop-filter:blur(14px);
     border-bottom:1px solid var(--border);
     padding:0 5%; display:flex; align-items:center; justify-content:space-between; height:60px;
   }
-  .nav-logo { font-size:1.1rem; font-weight:700; color:var(--accent); letter-spacing:1px; }
+  .nav-logo { font-size:1.1rem; font-weight:700; color:var(--accent); letter-spacing:1px; text-decoration:none; z-index:1001; position:relative; }
   .nav-links { display:flex; gap:28px; list-style:none; }
   .nav-links a { color:var(--muted); text-decoration:none; font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; transition:color .2s; }
-  .nav-links a:hover { color:var(--accent); }
+  .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+
+  /* HAMBURGER */
+  .hamburger {
+    display:none; flex-direction:column; justify-content:center; gap:5px;
+    width:36px; height:36px; cursor:pointer; background:none; border:none;
+    padding:4px; z-index:1001; position:relative;
+  }
+  .hamburger span {
+    display:block; width:24px; height:2px; background:var(--text);
+    border-radius:2px; transition:all .3s ease; transform-origin:center;
+  }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE DRAWER */
+  .mobile-drawer {
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(13,13,13,0.98); backdrop-filter:blur(20px);
+    z-index:999; display:flex; flex-direction:column;
+    justify-content:center; align-items:center; gap:0;
+    opacity:0; pointer-events:none;
+    transition:opacity .35s ease;
+  }
+  .mobile-drawer.open { opacity:1; pointer-events:all; }
+  .mobile-drawer a {
+    display:block; width:100%; text-align:center;
+    color:var(--muted); text-decoration:none; font-size:1.5rem;
+    font-weight:700; letter-spacing:2px; text-transform:uppercase;
+    padding:18px 0; border-bottom:1px solid rgba(255,255,255,.05);
+    transition:color .2s, background .2s;
+    opacity:0; transform:translateY(16px);
+    transition:opacity .3s ease, transform .3s ease, color .2s;
+  }
+  .mobile-drawer.open a {
+    opacity:1; transform:translateY(0);
+  }
+  .mobile-drawer.open a:nth-child(1) { transition-delay:.05s; }
+  .mobile-drawer.open a:nth-child(2) { transition-delay:.1s; }
+  .mobile-drawer.open a:nth-child(3) { transition-delay:.15s; }
+  .mobile-drawer.open a:nth-child(4) { transition-delay:.2s; }
+  .mobile-drawer.open a:nth-child(5) { transition-delay:.25s; }
+  .mobile-drawer.open a:nth-child(6) { transition-delay:.3s; }
+  .mobile-drawer a:hover { color:var(--accent); background:rgba(201,169,110,.05); }
+  .mobile-drawer a:last-child { border-bottom:none; }
+  .drawer-contact {
+    margin-top:36px; display:flex; gap:20px;
+  }
+  .drawer-contact a {
+    font-size:.8rem !important; font-weight:500 !important;
+    letter-spacing:1px !important; padding:10px 20px !important;
+    border:1px solid var(--border) !important; border-radius:4px !important;
+    width:auto !important; border-bottom:none !important;
+  }
+  .drawer-contact a.accent-btn {
+    background:var(--accent); color:#0d0d0d !important; border-color:var(--accent) !important;
+  }
 
   /* SECTIONS */
   section { padding:100px 10%; }
@@ -194,14 +251,30 @@
     section { padding:80px 6%; }
     .about-grid, .contact-grid { grid-template-columns:1fr; }
     .hero-stats { gap:24px; flex-wrap:wrap; }
-    .nav-links { gap:16px; }
+    .nav-links { display:none; }
+    .hamburger { display:flex; }
+    nav { padding:0 6%; }
+    .hero-inner { padding:0 0 20px; }
+    .hero-stats { justify-content:flex-start; }
+    .projects-grid { grid-template-columns:1fr; }
+    .skills-grid { grid-template-columns:1fr; }
+    .section-title { font-size:1.75rem; margin-bottom:32px; }
+    .chat-messages { height:260px; }
+    .chat-wrap { max-width:100%; }
+  }
+  @media(max-width:480px) {
+    section { padding:70px 5%; }
+    .hero-stats { gap:16px; }
+    .stat-num { font-size:1.6rem; }
+    .hero-ctas { flex-direction:column; }
+    .btn-primary, .btn-outline { text-align:center; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">MAS</div>
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">MAS</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -210,7 +283,23 @@
     <li><a href="#chat">AI Chat</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="#about"      class="drawer-link">About</a>
+  <a href="#experience" class="drawer-link">Experience</a>
+  <a href="#projects"   class="drawer-link">Projects</a>
+  <a href="#skills"     class="drawer-link">Skills</a>
+  <a href="#chat"       class="drawer-link">AI Chat</a>
+  <div class="drawer-contact">
+    <a href="#contact">Contact</a>
+    <a href="mailto:mohamedaminesaadani79@gmail.com" class="accent-btn">Hire Me</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -501,6 +590,36 @@
 </footer>
 
 <script>
+  // ── Hamburger / Mobile drawer ──────────────────────
+  const hamburger    = document.getElementById('hamburger');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+
+  function toggleMenu(open) {
+    hamburger.classList.toggle('open', open);
+    mobileDrawer.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  hamburger.addEventListener('click', () => toggleMenu(!mobileDrawer.classList.contains('open')));
+
+  document.querySelectorAll('.drawer-link, .drawer-contact a').forEach(link =>
+    link.addEventListener('click', () => toggleMenu(false))
+  );
+
+  // Close on outside tap
+  mobileDrawer.addEventListener('click', e => {
+    if (e.target === mobileDrawer) toggleMenu(false);
+  });
+
+  // Active nav link highlight on scroll
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const allSections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    allSections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+  }, { passive: true });
+
   // ── Fade-in on scroll ──────────────────────────────
   const obs = new IntersectionObserver(
     els => els.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
