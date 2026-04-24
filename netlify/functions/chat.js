@@ -105,7 +105,7 @@ export const handler = async (event) => {
       body: JSON.stringify({
         system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
         contents: [{ role: 'user', parts: [{ text: message.slice(0, 500) }] }],
-        generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
+        generationConfig: { maxOutputTokens: 800, temperature: 0.7 }
       })
     });
 
