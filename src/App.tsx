@@ -9,6 +9,7 @@ import AIChat       from './components/AIChat'
 import Contact      from './components/Contact'
 import Footer       from './components/Footer'
 import FloatingChat from './components/FloatingChat'
+import Loader       from './components/Loader'
 
 export default function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function App() {
 
   return (
     <>
+      <Loader />
       <Navbar />
       <Hero />
       <About />
