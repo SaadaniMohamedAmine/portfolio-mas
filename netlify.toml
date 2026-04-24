@@ -1,5 +1,6 @@
 [build]
-  publish = "."
+  command   = "npm run build"
+  publish   = "dist"
   functions = "netlify/functions"
 
 [functions]
@@ -15,6 +16,6 @@
 [[headers]]
   for = "/.netlify/functions/*"
   [headers.values]
-    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Origin  = "*"
     Access-Control-Allow-Methods = "POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type"

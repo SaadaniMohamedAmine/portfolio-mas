@@ -12,7 +12,30 @@
       "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
       "Bash(gh auth *)",
       "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-team-services-reader",
-      "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-project-services-updater"
+      "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-project-services-updater",
+      "Bash(jobs -l)",
+      "Bash(gh repo *)",
+      "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-deploy-services-updater",
+      "Bash(npx -y @netlify/mcp@latest --site-id 92d78349-193f-4398-b0ae-2100511ab4cf --proxy-path \"https://netlify-mcp.netlify.app/proxy/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..Zs0fCBYyuIse2E0Y.JnuSMWarDoqY3XKw35jxgM4wJ-OxYmDJzWxdd2wpEuGGVU_GzuMOcP_Ej1xpBAb8f5Mw_SLFtUE2OLa5-Um0ZFItatkoJNOqBn2RDDXm0XcC4lkHDpHM82v560dwVyPH6hrGvfyimUYnG5cnbxShefm8xEn-rhQzfPkPQu0qNf1_b7rpB61s2tS-en3a-2raKVH57fpccunmhMkcoMrVt84h3ZsnoTcsyYdFhLBcaWMjh0o7GrkPR2puD80RjDbd7LbX5bY86TLgk-NuHTlzIR50_7sR8Gu1JgvTiPF1xTmPxot90q6Dzr-PkOv4oUZmx0dzRjkcwEDvRhhW5IO1bQI_la1eTtUbmSd_pKL1ogzAoWOQjQ.JCErNyKI4fHNBSt4awZGAw\")",
+      "mcp__65a6337f-3393-481e-85ad-653007af020a__netlify-deploy-services-reader",
+      "Bash(curl -s -X POST https://mas-portfolio-2025.netlify.app/.netlify/functions/chat -H 'Content-Type: application/json' -d '{\"message\":\"Tech stack?\"}')",
+      "Bash(netlify env:set GEMINI_API_KEY \"AIzaSyDTQdgsRE7NQvM1ki0otlnDdScutyXe34A\" --site-id 92d78349-193f-4398-b0ae-2100511ab4cf)",
+      "Bash(netlify env:set GEMINI_API_KEY \"AIzaSyDTQdgsRE7NQvM1ki0otlnDdScutyXe34A\" --site 92d78349-193f-4398-b0ae-2100511ab4cf --scope functions --force)",
+      "Bash(netlify env:list --site 92d78349-193f-4398-b0ae-2100511ab4cf --json)",
+      "Bash(npx -y @netlify/mcp@latest --site-id 92d78349-193f-4398-b0ae-2100511ab4cf --proxy-path \"https://netlify-mcp.netlify.app/proxy/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..TmvPemJUfOB2rtkI.xg5B4AOli-y6NXg_Vz9ytDUTqOkIWY6ZWKX_-_3NQiU6EyKjVr47p-hPR8c9_dQHxrCVysWMmEBuK9ZkVhwXtKbIBiA3ZR-PaMBJKK3juHLdASPdRBOCm33BZFi5eUJsJn1UhjDlgFqinl9wb7lVREGmZ90vTVM0Tww7vl1mL68N6aXq4YhKq1vggM1sQEzX8f7Nmi6aVXjBbdof_Rqit8pB53qx3ZrfQSQl4Bz_CtOWL_wh8f1Lx6P9UJeGEKX5clXOdllEWOO2BCKSX8f-i4xrk6JLxSpFxiyDOl8QLZ82uclK5oJAPnje7JOp3JAXh1zwh48_u9a9swJ-MKdQNaKYnfeypHWZ54IFLZwAmgvzXHQx9w.cAsOpvc46uD3vktk3Z2bDw\")",
+      "Bash(curl -s -X POST https://mas-portfolio-2025.netlify.app/.netlify/functions/chat -H 'Content-Type: application/json' -d '{\"message\":\"What is Amines tech stack?\"}')",
+      "Bash(curl -s -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDTQdgsRE7NQvM1ki0otlnDdScutyXe34A' -H 'Content-Type: application/json' -d '{\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Say hello in one word\"}]}]}')",
+      "Bash(curl -s \"https://generativelanguage.googleapis.com/v1beta/models?key=AIzaSyDTQdgsRE7NQvM1ki0otlnDdScutyXe34A\")",
+      "Bash(python -c \"import sys,json; [print\\(m['name']\\) for m in json.load\\(sys.stdin\\).get\\('models',[]\\)]\")",
+      "Bash(node -e \"const d=[];process.stdin.on\\('data',c=>d.push\\(c\\)\\);process.stdin.on\\('end',\\(\\)=>{const r=JSON.parse\\(d.join\\(''\\)\\);r.models?.slice\\(0,10\\).forEach\\(m=>console.log\\(m.name\\)\\)}\\)\")",
+      "Bash(curl -s -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDTQdgsRE7NQvM1ki0otlnDdScutyXe34A' -H 'Content-Type: application/json' -d '{\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Say hello in one word\"}]}]}')",
+      "Bash(curl -s -X POST 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDTQdgsRE7NQvM1ki0otlnDdScutyXe34A' -H 'Content-Type: application/json' -d '{\"contents\":[{\"role\":\"user\",\"parts\":[{\"text\":\"Say hello in one word\"}]}]}')",
+      "Bash(npx -y @netlify/mcp@latest --site-id 92d78349-193f-4398-b0ae-2100511ab4cf --proxy-path \"https://netlify-mcp.netlify.app/proxy/eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..77B7akWVNVEbXwA1.TZmprqeYew_HyfwcaaiWgxd5SsoogCvS4XyfVB5alIuubIndj6RsX-QE1EpdZS86ndGjrOSvca-OCbjEYVsp0gs0ex9dQ_WmC6m_hDAnJQLk_0tXeEPb-rIfOV63GFfLQqHzDILWyFsiPCewELudhDPgZQuuAAPwaNJYV_3BJw06rDCqqFMZZifHU0c2p_xzmsZerfNpXItzoW51HNLMjJZjctgA_xW7ohtk8WgnuEp8mKxu67T1aSPBqxcgh4ZEmLvDUvqG3GBO6NMzvp4b-OOCNbfPURC61z5bVTxjiTpWNjvKYbg4453qN0aVbB3oCF2V2K88glUU5GlvoDqVB70mhxiM9LB6S_oqrIe5Kz8A4PydoQ.h6IdEx9EI55wxeQCLl2mLg\")",
+      "Bash(netlify login *)",
+      "Bash(cat /tmp/netlify_login_output)",
+      "Bash(jobs)",
+      "Bash(netlify deploy *)",
+      "Bash(npm run *)"
     ]
   }
 }
