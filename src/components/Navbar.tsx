@@ -4,9 +4,11 @@ import { nav } from '../data'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
-  // Lock body scroll when drawer is open
+  // Lock body scroll when drawer is open; don't touch overflow otherwise
+  // so we don't fight the Loader's scroll lock on initial mount.
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    if (!open) return
+    document.body.style.overflow = 'hidden'
     return () => { document.body.style.overflow = '' }
   }, [open])
 

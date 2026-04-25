@@ -5,20 +5,29 @@ export default function Loader() {
   const [done,   setDone]   = useState(false)
 
   useEffect(() => {
-    // Lock scroll at top while loader is visible
-    window.scrollTo({ top: 0, behavior: 'instant' })
-    document.body.style.overflow = 'hidden'
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
-    const t1 = setTimeout(() => setHiding(true), 3400)
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    document.documentElement.style.overflow = 'hidden'
+
+    const t1 = setTimeout(() => {
+      // Pin to top right before the fade starts so nothing peeks through
+      window.scrollTo({ top: 0, behavior: 'instant' })
+      setHiding(true)
+    }, 3400)
+
     const t2 = setTimeout(() => {
-      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+      // Scroll synchronously before setDone so the page is already at 0
+      // when React removes the overlay — avoids any one-frame flash.
+      window.scrollTo({ top: 0, behavior: 'instant' })
       setDone(true)
     }, 4000)
 
     return () => {
       clearTimeout(t1)
       clearTimeout(t2)
-      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
     }
   }, [])
 

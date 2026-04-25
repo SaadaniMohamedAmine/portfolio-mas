@@ -6,16 +6,19 @@ interface Message {
   text: string
 }
 
+const INITIAL_MESSAGES: Message[] = [
+  { role: 'bot', text: "Hi! I'm an AI assistant trained on Mohamed Amine's portfolio. Ask me anything about his experience, skills or projects!" }
+]
+
 export default function AIChat() {
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'bot', text: "Hi! I'm an AI assistant trained on Mohamed Amine's portfolio. Ask me anything about his experience, skills or projects!" }
-  ])
+  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES)
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const bottomRef = useRef<HTMLDivElement>(null)
+  const messagesRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const el = messagesRef.current
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' })
   }, [messages, loading])
 
   const send = async (text: string) => {
@@ -61,7 +64,7 @@ export default function AIChat() {
           </div>
 
           {/* Messages */}
-          <div className="chat-messages">
+          <div className="chat-messages" ref={messagesRef}>
             {messages.map((m, i) => (
               <div key={i} className={`msg ${m.role}`}>{m.text}</div>
             ))}
@@ -70,7 +73,6 @@ export default function AIChat() {
                 <span /><span /><span />
               </div>
             )}
-            <div ref={bottomRef} />
           </div>
 
           {/* Input */}

@@ -17,13 +17,15 @@ export default function FloatingChat() {
   const [input, setInput]     = useState('')
   const [loading, setLoading] = useState(false)
   const [unread, setUnread]   = useState(0)
-  const bottomRef             = useRef<HTMLDivElement>(null)
+  const messagesRef           = useRef<HTMLDivElement>(null)
   const inputRef              = useRef<HTMLInputElement>(null)
 
-  /* scroll to bottom on new message */
+  /* scroll the messages container to bottom on new message */
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages, loading])
+    if (!open) return
+    const el = messagesRef.current
+    if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' })
+  }, [messages, loading, open])
 
   /* focus input when opened */
   useEffect(() => {
@@ -79,7 +81,7 @@ export default function FloatingChat() {
         </div>
 
         {/* Messages */}
-        <div className="fc-messages">
+        <div className="fc-messages" ref={messagesRef}>
           {messages.map((m, i) => (
             <div key={i} className={`fc-msg fc-msg--${m.role}`}>
               {m.role === 'bot' && (
@@ -96,7 +98,6 @@ export default function FloatingChat() {
               </div>
             </div>
           )}
-          <div ref={bottomRef} />
         </div>
 
         {/* Suggestions */}

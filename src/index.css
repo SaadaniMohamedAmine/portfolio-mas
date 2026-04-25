@@ -10,7 +10,7 @@
   --font: 'Segoe UI', system-ui, sans-serif;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
 body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; }
 
 /* ── NAV ─────────────────────────────────────────── */
