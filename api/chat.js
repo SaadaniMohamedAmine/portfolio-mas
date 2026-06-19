@@ -1,4 +1,4 @@
-const https = require('https');
+import https from 'https';
 
 const SYSTEM_PROMPT = `You are an AI assistant embedded in Mohamed Amine Saadani's personal portfolio website.
 Answer questions about Amine concisely, warmly, and professionally. Keep replies under 120 words.
@@ -22,8 +22,8 @@ He has 4+ years of experience building high-performance web applications and lea
 - 95% uptime on e-learning platform for 3,000+ students
 
 ## Work Experience
-1. Product Tech Manager @ WayConnect (Oct 2023 – Dec 2025, Sousse)
-2. Senior Front-End Developer @ WayConnect (Mar 2022 – Sep 2023, Sousse)
+1. Product Tech Manager @ WayConnect (Oct 2023 - Dec 2025, Sousse)
+2. Senior Front-End Developer @ WayConnect (Mar 2022 - Sep 2023, Sousse)
 3. Full Stack JS Developer @ Pixelium (Aug-Dec 2021, Tunis) - 5,000+ daily users
 4. Full Stack JS Developer @ GoMyCode (Aug-Dec 2020, Tunis) - 3,000+ students
 
@@ -73,7 +73,7 @@ function httpsPost(url, data) {
   });
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.writeHead(200, {
       'Access-Control-Allow-Origin': '*',
@@ -112,11 +112,9 @@ module.exports = async function handler(req, res) {
     });
 
     const data = JSON.parse(result.body);
-    const reply = data && data.candidates && data.candidates[0] &&
-      data.candidates[0].content && data.candidates[0].content.parts &&
-      data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text
-      ? data.candidates[0].content.parts[0].text
-      : "I couldn't generate a response. Please try again!";
+    const reply =
+      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "I couldn't generate a response. Please try again!";
 
     return sendJSON(res, 200, { reply });
   } catch (err) {
@@ -125,4 +123,4 @@ module.exports = async function handler(req, res) {
       reply: "Something went wrong. Contact Amine at mohamedaminesaadani79@gmail.com or via LinkedIn!"
     });
   }
-};
+}
