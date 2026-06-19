@@ -1,4 +1,12 @@
-import { projects } from '../data'
+import { Link } from 'react-router-dom'
+import { icons } from 'lucide-react'
+import { projects, projectCategories, toSlug } from '../data'
+
+function ProjectIcon({ name, size = 22 }: { name: string; size?: number }) {
+  const Icon = icons[name as keyof typeof icons]
+  if (!Icon) return null
+  return <Icon size={size} strokeWidth={1.6} />
+}
 
 export default function Projects() {
   return (
@@ -9,20 +17,27 @@ export default function Projects() {
         <div className="divider" />
       </div>
 
-      <div className="projects-grid fade-in">
-        {projects.map((proj, i) => (
-          <div key={i} className="project-card">
-            <div className="proj-icon">{proj.icon}</div>
-            <div className="proj-title">{proj.title}</div>
-            <p className="proj-desc">{proj.description}</p>
-            <div className="proj-metrics">
-              {proj.metrics.map(m => <span key={m} className="metric">{m}</span>)}
-            </div>
-            <div className="proj-stack">
-              {proj.stack.map(s => <span key={s} className="tag">{s}</span>)}
-            </div>
-          </div>
-        ))}
+      <div className="cat-cards-grid fade-in">
+        {projectCategories.map(cat => {
+          const count = projects.filter(p => p.category === cat.id && p.published).length
+          return (
+            <Link
+              key={cat.id}
+              to={`/projects/${toSlug(cat.label)}`}
+              className="cat-card"
+            >
+              <div className="cat-card-top">
+                <div className="cat-card-icon">
+                  <ProjectIcon name={cat.iconName} size={24} />
+                </div>
+                <div className="cat-card-arrow">→</div>
+              </div>
+              <div className="cat-card-label">{cat.label}</div>
+              <div className="cat-card-desc">{cat.description}</div>
+              <div className="cat-card-count">{count} project{count !== 1 ? 's' : ''}</div>
+            </Link>
+          )
+        })}
       </div>
     </section>
   )

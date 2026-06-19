@@ -1,39 +1,14 @@
-import { useEffect } from 'react'
-import Navbar       from './components/Navbar'
-import Hero         from './components/Hero'
-import About        from './components/About'
-import Experience   from './components/Experience'
-import Projects     from './components/Projects'
-import Skills       from './components/Skills'
-import AIChat       from './components/AIChat'
-import Contact      from './components/Contact'
-import Footer       from './components/Footer'
-import FloatingChat from './components/FloatingChat'
-import Loader       from './components/Loader'
+import { Routes, Route } from 'react-router-dom'
+import HomePage            from './pages/HomePage'
+import ProjectCategoryPage from './pages/ProjectCategoryPage'
+import ProjectDetailPage   from './pages/ProjectDetailPage'
 
 export default function App() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }),
-      { threshold: 0.1 }
-    )
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <>
-      <Loader />
-      <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <AIChat />
-      <Contact />
-      <Footer />
-      <FloatingChat />
-    </>
+    <Routes>
+      <Route path="/"                                      element={<HomePage />} />
+      <Route path="/projects/:categorySlug"               element={<ProjectCategoryPage />} />
+      <Route path="/projects/:categorySlug/:projectSlug"  element={<ProjectDetailPage />} />
+    </Routes>
   )
 }

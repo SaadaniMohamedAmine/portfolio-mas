@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { nav } from '../data'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const navigate  = useNavigate()
+  const isHome    = location.pathname === '/'
 
-  // Lock body scroll when drawer is open; don't touch overflow otherwise
-  // so we don't fight the Loader's scroll lock on initial mount.
   useEffect(() => {
     if (!open) return
     document.body.style.overflow = 'hidden'
@@ -16,21 +18,39 @@ export default function Navbar() {
 
   const scrollTo = (id: string) => {
     close()
-    const el = document.getElementById(id.toLowerCase())
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (isHome) {
+      const el = document.getElementById(id.toLowerCase())
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate(`/#${id.toLowerCase()}`)
+    }
+  }
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    close()
+    if (isHome) {
+      const el = document.getElementById('hero')
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+    }
   }
 
   return (
     <>
       <nav>
-        <a href="#hero" className="nav-logo" onClick={e => { e.preventDefault(); scrollTo('hero') }}>
+        <a href="/" className="nav-logo" onClick={handleLogoClick}>
           MAS
         </a>
 
         <ul className="nav-links">
           {nav.map(item => (
             <li key={item}>
-              <a href={`#${item.toLowerCase()}`} onClick={e => { e.preventDefault(); scrollTo(item.toLowerCase()) }}>
+              <a
+                href={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+                onClick={e => { e.preventDefault(); scrollTo(item.toLowerCase()) }}
+              >
                 {item}
               </a>
             </li>
@@ -40,18 +60,18 @@ export default function Navbar() {
         <button
           className={`hamburger${open ? ' open' : ''}`}
           aria-label="Toggle menu"
+          type="button"
           onClick={() => setOpen(o => !o)}
         >
           <span /><span /><span />
         </button>
       </nav>
 
-      {/* Mobile drawer */}
       <div className={`mobile-drawer${open ? ' open' : ''}`} onClick={close}>
         {nav.map(item => (
           <a
             key={item}
-            href={`#${item.toLowerCase()}`}
+            href={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
             onClick={e => { e.preventDefault(); e.stopPropagation(); scrollTo(item.toLowerCase()) }}
           >
             {item}
@@ -59,7 +79,7 @@ export default function Navbar() {
         ))}
         <div className="drawer-contact" onClick={e => e.stopPropagation()}>
           <a href="mailto:mohamedaminesaadani79@gmail.com">Email me</a>
-          <a href="https://www.linkedin.com/in/mohamed-amine-saadani/" target="_blank" rel="noreferrer" className="accent-btn">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/mohamed-amine-saadani/" target="_blank" rel="noopener noreferrer" className="accent-btn">LinkedIn</a>
         </div>
       </div>
     </>
