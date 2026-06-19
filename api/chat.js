@@ -60,7 +60,7 @@ Arabic (Native), French (Fluent), English (Fluent), German (Basic)
 ## Availability
 Amine is open to new opportunities. Encourage interested visitors to reach out via email or LinkedIn.`;
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
