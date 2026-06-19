@@ -104,7 +104,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' + apiKey;
+    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + apiKey;
     const result = await httpsPost(url, {
       system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
       contents: [{ role: 'user', parts: [{ text: message.slice(0, 500) }] }],
@@ -112,6 +112,8 @@ export default async function handler(req, res) {
     });
 
     const data = JSON.parse(result.body);
+    console.log('Gemini status:', result.status, 'body:', result.body.slice(0, 300));
+
     const reply =
       data?.candidates?.[0]?.content?.parts?.[0]?.text ||
       "I couldn't generate a response. Please try again!";
