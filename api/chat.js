@@ -77,7 +77,8 @@ module.exports = async function handler(req, res) {
 
   let message;
   try {
-    ({ message } = req.body);
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+    message = body?.message;
     if (!message || typeof message !== 'string') throw new Error('invalid');
   } catch {
     return res.status(400).json({ error: 'Bad request' });
