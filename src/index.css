@@ -1053,6 +1053,7 @@ footer .footer-sub { margin-top: 8px; font-size: .75rem; color: #444; }
   nav { padding: 0 6%; }
   .cat-cards-grid { grid-template-columns: 1fr 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
+  .project-card { aspect-ratio: unset; overflow: visible; }
   .proj-detail-body { grid-template-columns: 1fr; }
   .proj-detail-hero { flex-direction: column; gap: 16px; }
   .skills-grid { grid-template-columns: 1fr; }
