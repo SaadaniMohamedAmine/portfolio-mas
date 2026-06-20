@@ -49,7 +49,7 @@ function sendJSON(res, statusCode, data) {
   res.end(body);
 }
 
-function httpsPost(url, data) {
+function httpsPost(url, data, headers) {
   return new Promise((resolve, reject) => {
     const payload = JSON.stringify(data);
     const urlObj = new URL(url);
@@ -60,6 +60,7 @@ function httpsPost(url, data) {
       headers: {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(payload),
+        ...headers,
       },
     };
     const request = https.request(options, (response) => {
@@ -87,7 +88,7 @@ export default async function handler(req, res) {
     return sendJSON(res, 405, { error: 'Method Not Allowed' });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
     return sendJSON(res, 200, {
       reply: "The AI assistant isn't configured yet. Reach out to Amine at mohamedaminesaadani79@gmail.com!"
@@ -104,20 +105,25 @@ export default async function handler(req, res) {
   }
 
   try {
-    const url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + apiKey;
-    const result = await httpsPost(url, {
-      contents: [{
-        role: 'user',
-        parts: [{ text: SYSTEM_PROMPT + '\n\n---\nVisitor question: ' + message.slice(0, 500) }]
-      }],
-      generationConfig: { maxOutputTokens: 800, temperature: 0.7 }
-    });
+    const result = await httpsPost(
+      'https://api.groq.com/openai/v1/chat/completions',
+      {
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'user',   content: message.slice(0, 500) },
+        ],
+        max_tokens: 300,
+        temperature: 0.7,
+      },
+      { Authorization: 'Bearer ' + apiKey }
+    );
 
     const data = JSON.parse(result.body);
-    console.log('Gemini status:', result.status, 'body:', result.body.slice(0, 300));
+    console.log('Groq status:', result.status, 'body:', result.body.slice(0, 300));
 
     const reply =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ||
+      data?.choices?.[0]?.message?.content ||
       "I couldn't generate a response. Please try again!";
 
     return sendJSON(res, 200, { reply });
