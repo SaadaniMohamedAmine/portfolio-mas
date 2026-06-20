@@ -27,13 +27,26 @@ export default function Projects() {
               className="cat-card"
             >
               <div className="cat-card-top">
-                <div className="cat-card-icon">
-                  <ProjectIcon name={cat.iconName} size={24} />
+                <div className="cat-card-icon-label">
+                  <div className="cat-card-icon">
+                    <ProjectIcon name={cat.iconName} size={24} />
+                  </div>
+                  <div className="cat-card-label">{cat.label}</div>
                 </div>
                 <div className="cat-card-arrow">→</div>
               </div>
-              <div className="cat-card-label">{cat.label}</div>
               <div className="cat-card-desc">{cat.description}</div>
+              <div className="cat-card-powered">
+                <span className="cat-card-powered-label">Powered by</span>
+                <div className="cat-card-powered-chips">
+                  {cat.poweredBy.map(p => (
+                    <div key={p.label} className="cat-card-chip">
+                      <ProjectIcon name={p.icon} size={12} />
+                      <span>{p.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
               <div className="cat-card-count">{count} project{count !== 1 ? 's' : ''}</div>
             </Link>
           )

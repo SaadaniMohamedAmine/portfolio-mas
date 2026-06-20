@@ -38,8 +38,10 @@ export interface ProjectItem {
   details: ProjectDetails;
 }
 
+export interface PoweredByItem { icon: string; label: string }
 export interface ProjectCategory {
   id: string; iconName: string; label: string; description: string;
+  poweredBy: PoweredByItem[];
 }
 
 export interface SkillCategory { icon: string; category: string; items: string[] }
@@ -151,26 +153,62 @@ export const projectCategories: ProjectCategory[] = [
   {
     id: 'ai', iconName: 'Bot', label: 'AI-Powered',
     description: 'Applications intelligentes intégrant des LLMs, du traitement du langage naturel et des pipelines de données — de l\'analyse de code à la génération de contenu en passant par la transcription de réunions.',
+    poweredBy: [
+      { icon: 'Brain',    label: 'LLM'     },
+      { icon: 'Sparkles', label: 'Gemini'  },
+      { icon: 'MessageSquare', label: 'NLP' },
+      { icon: 'Cpu',      label: 'AI API'  },
+    ],
   },
   {
     id: 'frontend', iconName: 'Zap', label: 'Frontend Showcases',
     description: 'Expériences UI haute-performance — design systems, data visualizations interactives, jeux browser et librairies d\'animation CSS — toutes optimisées pour les Core Web Vitals.',
+    poweredBy: [
+      { icon: 'Layers',   label: 'React'   },
+      { icon: 'Gauge',    label: 'Vite'    },
+      { icon: 'Palette',  label: 'CSS3'    },
+      { icon: 'BarChart2',label: 'Charts'  },
+    ],
   },
   {
     id: 'saas', iconName: 'LayoutDashboard', label: 'SaaS & Dashboards',
     description: 'Plateformes SaaS complètes et tableaux de bord analytiques : CRM, e-learning, RH, e-commerce et marketing — construits pour la scalabilité et la conversion.',
+    poweredBy: [
+      { icon: 'Database', label: 'MongoDB' },
+      { icon: 'CreditCard', label: 'Stripe' },
+      { icon: 'Users',    label: 'Auth'    },
+      { icon: 'TrendingUp', label: 'Analytics' },
+    ],
   },
   {
     id: 'realtime', iconName: 'Radio', label: 'Real-Time',
     description: 'Applications temps réel à haute disponibilité — matching géolocalisé, collaboration multi-utilisateurs, suivi de prix live — propulsées par WebSockets et Meteor.',
+    poweredBy: [
+      { icon: 'Wifi',     label: 'WebSocket' },
+      { icon: 'MapPin',   label: 'Geo'     },
+      { icon: 'Clock',    label: 'Live'    },
+      { icon: 'Globe',    label: 'Meteor'  },
+    ],
   },
   {
     id: 'devtools', iconName: 'Wrench', label: 'Developer Tools',
     description: 'Outils construits pour les développeurs : scaffolding CLI, serveurs mock API et gestionnaires de snippets — pour accélérer le workflow et standardiser les pratiques.',
+    poweredBy: [
+      { icon: 'Terminal', label: 'CLI'     },
+      { icon: 'GitBranch', label: 'Git'   },
+      { icon: 'Package',  label: 'npm'    },
+      { icon: 'Code2',    label: 'Node'   },
+    ],
   },
   {
     id: 'product', iconName: 'Package', label: 'Product-Led',
     description: 'Projets à impact produit mesurable — stratégie Agile, billing SaaS, PWA offline-first et funnels d\'onboarding optimisés pour la conversion trial-to-paid.',
+    poweredBy: [
+      { icon: 'Target',   label: 'Agile'  },
+      { icon: 'Smartphone', label: 'PWA'  },
+      { icon: 'Layers',   label: 'SaaS'  },
+      { icon: 'Rocket',   label: 'MVP'    },
+    ],
   },
 ]
 

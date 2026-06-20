@@ -46,40 +46,41 @@ export default function ProjectDetailPage() {
 
         {/* ── HERO ──────────────────────────────────────────────── */}
         <div className="pd-hero fade-in visible">
+          {/* Logo + Title + Status — flex row */}
           <div className="pd-hero-left">
             {project.logoImage
               ? <img src={project.logoImage} alt={project.title} className="pd-logo" />
               : <div className="proj-detail-icon"><ProjectIcon name={project.icon} size={40} /></div>
             }
-            <div>
-              <span className={`proj-detail-status ${statusClass}`}>{details.status}</span>
+            <div className="pd-title-row">
               <h1 className="pd-title">{project.title}</h1>
-              <p className="pd-subtitle">{project.description}</p>
-
-              {/* CTA links */}
-              <div className="pd-ctas">
-                {details.live && (
-                  <a href={details.live} target="_blank" rel="noopener noreferrer" className="pd-cta pd-cta--primary">
-                    <ProjectIcon name="ExternalLink" size={15} /> Live Platform
-                  </a>
-                )}
-                {details.playground && (
-                  <a href={details.playground} target="_blank" rel="noopener noreferrer" className="pd-cta">
-                    <ProjectIcon name="Play" size={15} /> Playground
-                  </a>
-                )}
-                {details.docs && (
-                  <a href={details.docs} target="_blank" rel="noopener noreferrer" className="pd-cta">
-                    <ProjectIcon name="BookOpen" size={15} /> API Docs
-                  </a>
-                )}
-                {details.github && (
-                  <a href={details.github} target="_blank" rel="noopener noreferrer" className="pd-cta">
-                    <ProjectIcon name="Github" size={15} /> Source Code
-                  </a>
-                )}
-              </div>
+              <span className={`proj-detail-status ${statusClass}`}>{details.status}</span>
             </div>
+          </div>
+
+          {/* Description + CTAs — full width below */}
+          <p className="pd-subtitle">{project.description}</p>
+          <div className="pd-ctas">
+            {details.live && (
+              <a href={details.live} target="_blank" rel="noopener noreferrer" className="pd-cta pd-cta--primary">
+                <ProjectIcon name="ExternalLink" size={15} /> Live Platform
+              </a>
+            )}
+            {details.playground && (
+              <a href={details.playground} target="_blank" rel="noopener noreferrer" className="pd-cta">
+                <ProjectIcon name="Play" size={15} /> Playground
+              </a>
+            )}
+            {details.docs && (
+              <a href={details.docs} target="_blank" rel="noopener noreferrer" className="pd-cta">
+                <ProjectIcon name="BookOpen" size={15} /> API Docs
+              </a>
+            )}
+            {details.github && (
+              <a href={details.github} target="_blank" rel="noopener noreferrer" className="pd-cta">
+                <ProjectIcon name="Github" size={15} /> Source Code
+              </a>
+            )}
           </div>
 
           {/* Metrics strip */}
