@@ -106,8 +106,10 @@ export default async function handler(req, res) {
   try {
     const url = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=' + apiKey;
     const result = await httpsPost(url, {
-      system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-      contents: [{ role: 'user', parts: [{ text: message.slice(0, 500) }] }],
+      contents: [{
+        role: 'user',
+        parts: [{ text: SYSTEM_PROMPT + '\n\n---\nVisitor question: ' + message.slice(0, 500) }]
+      }],
       generationConfig: { maxOutputTokens: 800, temperature: 0.7 }
     });
 
