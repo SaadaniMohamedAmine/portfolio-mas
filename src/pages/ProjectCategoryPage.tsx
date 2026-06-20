@@ -67,18 +67,21 @@ export default function ProjectCategoryPage() {
                 to={`/projects/${categorySlug}/${toSlug(proj.title)}`}
                 className="project-card proj-card-link"
               >
-                {proj.logoImage ? (
-                  <img src={proj.logoImage} alt={proj.title} className="proj-logo-img" />
-                ) : (
-                  <div className="proj-icon-wrap">
-                    <ProjectIcon name={proj.icon} size={24} />
+                {/* Logo + metrics side by side */}
+                <div className="proj-card-top-row">
+                  {proj.logoImage ? (
+                    <img src={proj.logoImage} alt={proj.title} className="proj-logo-img" />
+                  ) : (
+                    <div className="proj-icon-wrap">
+                      <ProjectIcon name={proj.icon} size={24} />
+                    </div>
+                  )}
+                  <div className="proj-metrics">
+                    {proj.metrics.map(m => <span key={m} className="metric">{m}</span>)}
                   </div>
-                )}
+                </div>
                 <div className="proj-title">{proj.title}</div>
                 <p className="proj-desc">{proj.description}</p>
-                <div className="proj-metrics">
-                  {proj.metrics.map(m => <span key={m} className="metric">{m}</span>)}
-                </div>
                 <div className="proj-stack">
                   {proj.stack.map(s => <span key={s} className="tag">{s}</span>)}
                 </div>

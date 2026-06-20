@@ -342,12 +342,13 @@ section { padding: 100px 10%; }
 }
 
 /* Project cards grid (level 2) */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 24px; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(340px,1fr)); gap: 24px; }
 .project-card {
   background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-  padding: 28px; transition: border-color .2s, transform .2s;
-  display: flex; flex-direction: column; cursor: pointer;
+  padding: 24px 24px 28px; transition: border-color .2s, transform .2s;
+  display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;
   text-align: left; font-family: var(--font); color: var(--text); width: 100%;
+  aspect-ratio: 1 / 1; overflow: hidden;
 }
 .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 .proj-icon-wrap {
@@ -357,12 +358,15 @@ section { padding: 100px 10%; }
   color: var(--accent); margin-bottom: 16px;
 }
 .proj-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-.proj-desc { font-size: .875rem; color: #bbb; margin-bottom: 16px; line-height: 1.7; flex: 1; }
-.proj-metrics { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.proj-desc { font-size: .875rem; color: #bbb; margin-bottom: 16px; line-height: 1.7; }
+.proj-card-top-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.proj-card-top-row .proj-logo-img,
+.proj-card-top-row .proj-icon-wrap { flex-shrink: 0; }
+.proj-metrics { display: flex; gap: 6px; flex-wrap: wrap; }
 .metric { background: rgba(201,169,110,.1); color: var(--accent); font-size: .75rem; padding: 3px 10px; border-radius: 12px; }
 .proj-stack { display: flex; gap: 6px; flex-wrap: wrap; }
 .tag { background: rgba(255,255,255,.05); color: var(--muted); font-size: .75rem; padding: 3px 10px; border-radius: 12px; }
-.proj-view-more { font-size: .78rem; color: var(--accent); margin-top: 16px; font-weight: 600; letter-spacing: .3px; }
+.proj-view-more { font-size: .78rem; color: var(--accent); margin-top: 16px; padding-bottom: 4px; font-weight: 600; letter-spacing: .3px; }
 
 /* Project detail page (level 3) */
 .proj-detail-page { max-width: 900px; }
