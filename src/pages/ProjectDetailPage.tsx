@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { icons } from 'lucide-react'
 import { projectCategories, projects, toSlug } from '../data'
@@ -27,6 +27,24 @@ export default function ProjectDetailPage() {
 
   const { details } = project
   const statusClass = `proj-detail-status--${details.status.toLowerCase().replace(' ', '-')}`
+  const gallery = details.gallery ?? []
+
+  const [lightbox, setLightbox] = useState<number | null>(null)
+
+  const closeLightbox = useCallback(() => setLightbox(null), [])
+  const prevImg = useCallback(() => setLightbox(i => i !== null ? (i - 1 + gallery.length) % gallery.length : null), [gallery.length])
+  const nextImg = useCallback(() => setLightbox(i => i !== null ? (i + 1) % gallery.length : null), [gallery.length])
+
+  useEffect(() => {
+    if (lightbox === null) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft')  prevImg()
+      if (e.key === 'ArrowRight') nextImg()
+      if (e.key === 'Escape')     closeLightbox()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightbox, prevImg, nextImg, closeLightbox])
 
   return (
     <>
@@ -198,6 +216,50 @@ export default function ProjectDetailPage() {
 
           </div>
         </div>
+
+        {/* ── APP GALLERY ───────────────────────────────────── */}
+        {gallery.length > 0 && (
+          <div className="pd-gallery-section fade-in visible">
+            <div className="pd-gallery-header">
+              <ProjectIcon name="Images" size={20} />
+              <h3 className="pd-gallery-title">App Gallery</h3>
+              <span className="pd-gallery-count">{gallery.length} screenshots</span>
+            </div>
+            <div className="pd-gallery-grid">
+              {gallery.map((img, i) => (
+                <button type="button" key={i} className="pd-gallery-thumb" aria-label={`View ${img.caption}`} onClick={() => setLightbox(i)}>
+                  <img src={img.src} alt={img.caption} loading="lazy" />
+                  <div className="pd-gallery-thumb-overlay">
+                    <ProjectIcon name="ZoomIn" size={20} />
+                  </div>
+                  <div className="pd-gallery-thumb-caption">{img.caption}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── LIGHTBOX ──────────────────────────────────────── */}
+        {lightbox !== null && (
+          <div className="pd-lightbox" onClick={closeLightbox}>
+            <button type="button" aria-label="Close gallery" className="pd-lightbox-close" onClick={closeLightbox}>
+              <ProjectIcon name="X" size={22} />
+            </button>
+            <button type="button" aria-label="Previous image" className="pd-lightbox-nav pd-lightbox-prev" onClick={e => { e.stopPropagation(); prevImg() }}>
+              <ProjectIcon name="ChevronLeft" size={28} />
+            </button>
+            <div className="pd-lightbox-content" onClick={e => e.stopPropagation()}>
+              <img src={gallery[lightbox].src} alt={gallery[lightbox].caption} />
+              <div className="pd-lightbox-caption">
+                <span>{gallery[lightbox].caption}</span>
+                <span className="pd-lightbox-counter">{lightbox + 1} / {gallery.length}</span>
+              </div>
+            </div>
+            <button type="button" aria-label="Next image" className="pd-lightbox-nav pd-lightbox-next" onClick={e => { e.stopPropagation(); nextImg() }}>
+              <ProjectIcon name="ChevronRight" size={28} />
+            </button>
+          </div>
+        )}
 
       </main>
       <Footer />

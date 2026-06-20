@@ -17,6 +17,7 @@ export interface ExperienceItem {
 
 export interface Capability { capability: string; what: string }
 
+export interface GalleryImage { src: string; caption: string }
 export interface ProjectDetails {
   longDescription: string;
   highlights: string[];
@@ -28,6 +29,7 @@ export interface ProjectDetails {
   docs?: string;
   statusPage?: string;
   capabilities?: Capability[];
+  gallery?: GalleryImage[];
 }
 
 export interface ProjectItem {
@@ -253,6 +255,26 @@ export const projects: ProjectItem[] = [
         { capability: 'Integration Layer',       what: 'Native hooks for Jira and Linear to push findings directly into existing workflows.' },
         { capability: 'Open Ecosystem',          what: 'Public REST API (v1), a CLI tool, a GitHub Action, and embeddable README score badges.' },
         { capability: 'White-label Branding',    what: 'Custom logo and color theming for agencies and enterprise resale.' },
+      ],
+      gallery: [
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-2026-06-20-14_18_37.png',                                                            caption: 'Landing Page'     },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-login-2026-06-20-14_18_59.png',                                                      caption: 'Login'            },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-register-2026-06-20-14_19_15.png',                                                   caption: 'Register'         },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-2026-06-20-14_19_32.png',                                                  caption: 'Dashboard'        },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-repositories-2026-06-20-14_19_50.png',                                     caption: 'Repositories'     },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-history-2026-06-20-14_20_02.png',                                          caption: 'History'          },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-pull-requests-2026-06-20-14_20_12.png',                                    caption: 'Pull Requests'    },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-analytics-2026-06-20-14_20_24.png',                                        caption: 'Analytics'        },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-integrations-2026-06-20-14_20_33.png',                                     caption: 'Integrations'     },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-team-2026-06-20-14_20_41.png',                                             caption: 'Team'             },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-settings-2026-06-20-14_20_53.png',                                         caption: 'Settings'         },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-settings-2026-06-20-14_21_01.png',                                         caption: 'Settings — Theme' },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-settings-2026-06-20-14_21_14.png',                                         caption: 'Settings — API'   },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-settings-2026-06-20-14_21_24.png',                                         caption: 'Settings — Billing'},
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-support-2026-06-20-14_21_33.png',                                          caption: 'Support'          },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-documentation-2026-06-20-14_21_42.png',                                    caption: 'Documentation'    },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-analyze-2026-06-20-14_22_21.png',                                          caption: 'Code Analyzer'    },
+        { src: '/projects/pulse-ai/screencapture-ai-code-reviewer-seven-sigma-vercel-app-dashboard-analysis-cmqgpgmfl001a1kw368gom0no-2026-06-20-14_22_46.png',               caption: 'Analysis Result'  },
       ],
     },
   },
