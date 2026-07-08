@@ -279,6 +279,26 @@ export const projects: ProjectItem[] = [
     },
   },
   {
+    icon: 'PenLine',
+    title: 'Verbio AI',
+    description: 'Full-stack AI copywriting SaaS that generates emails, landing pages, ads and posts in real-time — streaming generation engine, brand voice system, Stripe billing and live multi-user collaboration.',
+    metrics: ['SSE Streaming', '4-Tier Billing', 'Live Collaboration', 'Production-Grade'],
+    stack: ['Next.js 15', 'React 19', 'Groq / Gemini', 'Stripe', 'Prisma', 'Neon Postgres', 'Liveblocks', 'NextAuth v5', 'Tailwind CSS', 'Tiptap'],
+    category: 'ai',
+    logoImage: '/verbio-ai.svg',
+    published: true,
+    details: {
+      longDescription: 'Full-stack AI copywriting SaaS that generates emails, landing pages, ads and posts in real-time — streaming generation engine, brand voice system, Stripe billing and live multi-user collaboration.',
+      highlights: [
+        'Real-time SSE streaming generation engine for emails, landing pages, ads, and posts',
+        'Brand voice system for consistent tone and style across generated content',
+        '4-tier Stripe billing for flexible subscription plans',
+        'Live multi-user collaboration powered by Liveblocks',
+      ],
+      status: 'Live',
+    },
+  },
+  {
     icon: 'FileText',
     title: 'AI Resume Analyzer',
     description: 'Upload a CV and a job description — AI scores the match, highlights gaps, and rewrites weak sections to boost application success.',
