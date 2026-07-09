@@ -592,6 +592,8 @@ section { padding: 100px 10%; }
 /* Video embed */
 .pd-video-wrap {
   width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
   background: var(--card); border: 1px solid var(--border); border-radius: 16px;
   overflow: hidden;
 }
