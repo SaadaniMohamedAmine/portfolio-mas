@@ -83,7 +83,8 @@ export default function ProjectCategoryPage() {
                 <div className="proj-title">{proj.title}</div>
                 <p className="proj-desc">{proj.description}</p>
                 <div className="proj-stack">
-                  {proj.stack.map(s => <span key={s} className="tag">{s}</span>)}
+                  {proj.stack.slice(0, 12).map(s => <span key={s} className="tag">{s}</span>)}
+                  {proj.stack.length > 12 && <span className="tag">+{proj.stack.length - 12}</span>}
                 </div>
                 <div className="proj-view-more">View Details →</div>
               </Link>
