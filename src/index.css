@@ -376,7 +376,10 @@ section { padding: 100px 10%; }
   color: var(--accent); margin-bottom: 16px;
 }
 .proj-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
-.proj-desc { font-size: .875rem; color: #bbb; margin-bottom: 16px; line-height: 1.7; }
+.proj-desc {
+  font-size: .875rem; color: #bbb; margin-bottom: 16px; line-height: 1.7;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
 .proj-card-top-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
 .proj-card-top-row .proj-logo-img,
 .proj-card-top-row .proj-icon-wrap { flex-shrink: 0; }
