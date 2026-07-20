@@ -388,6 +388,7 @@ export const projects: ProjectItem[] = [
       status: 'Live',
       live: 'https://axiom-kanban-board.vercel.app/',
       github: 'https://github.com/SaadaniMohamedAmine/axiom-kanban-board',
+      videoEmbed: 'https://drive.google.com/file/d/1jS0ooxhvekF5n7s31TcZ0puQPONd1vz7/preview',
       capabilities: [
         { capability: 'Realtime Kanban Engine',        what: 'Pusher Channels WebSocket — zero-latency drag-and-drop, live task updates across all connected clients simultaneously.' },
         { capability: 'Axiom Intelligence',             what: 'Dual-AI engine with Groq primary and Gemini fallback — AI task descriptions, priority suggestions, sprint insights, plan-gated with daily quota.' },
