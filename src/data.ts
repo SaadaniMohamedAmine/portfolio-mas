@@ -467,8 +467,9 @@ export const projects: ProjectItem[] = [
         'Observability built-in — Sentry error monitoring',
       ],
       status: 'Live',
-      live:   'https://resona-job-match.vercel.app/',
-      github: 'https://github.com/SaadaniMohamedAmine/resona-job-match',
+      live:       'https://resona-job-match.vercel.app/',
+      github:     'https://github.com/SaadaniMohamedAmine/resona-job-match',
+      videoEmbed: 'https://drive.google.com/file/d/19Z6bOI6G_TpjPRKLUerog-rUdvbiPe7g/preview',
       capabilities: [
         { capability: 'Semantic Match Engine',      what: "Groq (Llama 3.3 70B) analysis + HuggingFace embeddings stored as pgvector columns — a true vector similarity score shown alongside the AI's language-based match score." },
         { capability: 'Gap Detection & Rewrite',     what: 'Matching/missing skills extraction, section-by-section AI rewrite with before/after comparison, grounded strictly in the original resume.' },
