@@ -466,7 +466,7 @@ export const projects: ProjectItem[] = [
         "Rate-limited by design — Upstash Redis, correct under Vercel's stateless functions",
         'Observability built-in — Sentry error monitoring',
       ],
-      status: 'In Progress',
+      status: 'Live',
       live:   'https://resona-job-match.vercel.app/',
       github: 'https://github.com/SaadaniMohamedAmine/resona-job-match',
       capabilities: [
