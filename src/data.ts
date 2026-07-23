@@ -447,6 +447,21 @@ export const projects: ProjectItem[] = [
     },
   },
   {
+    icon: 'FileSearch',
+    title: 'Résona',
+    description: 'AI-powered resume and job-match platform — semantic scoring via real vector embeddings, AI section rewriting, tailored cover letters, and a kanban application tracker.',
+    metrics: ['pgvector Search', 'Dual-AI Pipeline', 'Stripe Billing', 'Production-Grade'],
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Groq Llama 3.3', 'HuggingFace', 'Neon Postgres', 'pgvector', 'Prisma', 'NextAuth v5', 'Stripe', 'Upstash Redis', 'next-intl', 'Tailwind v4', 'UploadThing'],
+    category: 'ai',
+    logoImage: '/resona-icon.png',
+    published: true,
+    details: {
+      longDescription: 'AI-powered resume and job-match platform — semantic scoring via real vector embeddings, AI section rewriting, tailored cover letters, and a kanban application tracker.',
+      highlights: [],
+      status: 'In Progress',
+    },
+  },
+  {
     icon: 'FileText',
     title: 'AI Resume Analyzer',
     description: 'Upload a CV and a job description — AI scores the match, highlights gaps, and rewrites weak sections to boost application success.',
