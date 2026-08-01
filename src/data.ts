@@ -527,6 +527,25 @@ export const projects: ProjectItem[] = [
     },
   },
   {
+    icon: 'ScanEye',
+    title: 'Poisik',
+    description: 'AI-powered UX/UI design audit tool that turns any screenshot into a scored, actionable critique report',
+    metrics: ['Dual-AI Engine', '22 API Routes', '3-Tier Billing', 'Production-Grade'],
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma 7', 'Neon Postgres', 'NextAuth v5', 'Groq Llama 3.3', 'Gemini', 'Stripe', 'next-intl', 'Playwright', 'UploadThing', 'Sentry', 'Vitest'],
+    category: 'ai',
+    logoImage: '/poisik-icon.png',
+    published: true,
+    details: {
+      longDescription: 'AI-powered UX/UI design audit tool that turns any screenshot into a scored, actionable critique report',
+      highlights: [
+        'Dual-AI engine — Groq Llama 3.3 as primary analysis model, Gemini as automatic fallback',
+        '22 API routes covering upload, analysis, billing, and account management',
+        '3-tier billing (Free / Pro / Enterprise) enforced via PLAN_LIMITS',
+      ],
+      status: 'In Progress',
+    },
+  },
+  {
     icon: 'FileText',
     title: 'AI Resume Analyzer',
     description: 'Upload a CV and a job description — AI scores the match, highlights gaps, and rewrites weak sections to boost application success.',
