@@ -22,6 +22,7 @@ export interface ProjectDetails {
   longDescription: string;
   highlights: string[];
   status: 'Live' | 'In Progress' | 'Completed';
+  version?: string;
   github?: string;
   live?: string;
   videoEmbed?: string;
@@ -529,20 +530,39 @@ export const projects: ProjectItem[] = [
   {
     icon: 'ScanEye',
     title: 'Poisik',
-    description: 'AI-powered UX/UI design audit tool that turns any screenshot into a scored, actionable critique report',
-    metrics: ['Dual-AI Engine', '22 API Routes', '3-Tier Billing', 'Production-Grade'],
+    description: 'AI-powered UX/UI design audit platform that turns any screenshot into a scored, actionable critique report — built as a production-grade SaaS, not a demo.',
+    metrics: ['Dual-AI Engine', 'Vision-Based Audit', 'Stripe Billing', 'Production Grade'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma 7', 'Neon Postgres', 'NextAuth v5', 'Groq Llama 3.3', 'Gemini', 'Stripe', 'next-intl', 'Playwright', 'UploadThing', 'Sentry', 'Vitest'],
     category: 'ai',
     logoImage: '/poisik-icon.png',
     published: true,
     details: {
-      longDescription: 'AI-powered UX/UI design audit tool that turns any screenshot into a scored, actionable critique report',
+      longDescription: 'Poisik is an AI-powered UX/UI design audit platform engineered as a production-grade SaaS. It combines a dual-AI critique engine (Groq Llama 3.3 primary, Gemini fallback with automatic failover) that scores any uploaded screenshot against real usability and accessibility heuristics, project-based history with real before/after comparison, Stripe billing with server-enforced plan gates (Free / Pro / Enterprise), a full notification and onboarding system, and complete FR/EN internationalization — all backed by a Neon Postgres schema.',
       highlights: [
-        'Dual-AI engine — Groq Llama 3.3 as primary analysis model, Gemini as automatic fallback',
-        '22 API routes covering upload, analysis, billing, and account management',
-        '3-tier billing (Free / Pro / Enterprise) enforced via PLAN_LIMITS',
+        'Dual-AI failover — Groq primary, Gemini fallback, automatic switch on error, with a real WCAG contrast re-check layered on top of the AI\'s raw score',
+        'Compare mode with computed deltas — real score-lift %, category-delta table, AI-generated "key improvements," not templated copy',
+        'Production-grade billing — Stripe Checkout + Customer Portal, server-enforced plan limits, refund-on-failure usage credits',
+        'Public API + CLI — script audits outside the browser via API key or the poisik CLI',
+        'FR / EN i18n across the entire authenticated app',
+        'Full onboarding system — guided tour, notification center, getting-started checklist',
+        'Zod-validated AI output, sanitized error messages on failure',
       ],
-      status: 'In Progress',
+      status: 'Live',
+      version: '1.0',
+      live: 'https://poisik-design-critic.vercel.app/en',
+      github: 'https://github.com/SaadaniMohamedAmine/poisik-design-critic',
+      capabilities: [
+        { capability: 'Screenshot-to-Report Pipeline', what: 'Upload a screenshot, get a structured critique: overall score, per-category breakdown, annotated issues with severity, and one-click "fix in code" snippets.' },
+        { capability: 'Dual-AI Critique Engine',        what: 'Groq Llama 3.3 (vision) primary, Gemini fallback with automatic failover; Zod-validated output schema plus a real WCAG contrast re-check layered on top of the AI\'s own accessibility read.' },
+        { capability: 'Projects & History',             what: 'Every analysis grouped by project, with real thumbnails, scores, and issue counts — no synthetic placeholders.' },
+        { capability: 'Compare Mode',                   what: 'Side-by-side before/after audits with a computed score-lift percentage, category-delta table, and an AI-generated "key improvements" summary.' },
+        { capability: 'Public Sharing & PDF Export',    what: 'Toggle any report to a public read-only link, or export a branded PDF, without exposing the owner\'s authenticated shell.' },
+        { capability: 'Stripe Billing & Plan Gates',    what: 'Free / Pro / Enterprise tiers enforced server-side, Customer Portal for self-serve cancellation, real usage-limit modal instead of a dead paywall.' },
+        { capability: 'Notifications & Onboarding',     what: 'Persistent notification center, toast layer, a 4-step guided product tour with live DOM spotlighting, and a getting-started checklist, all state-tracked per user.' },
+        { capability: 'Public API & CLI',               what: 'POST /api/v1/analyze with API-key auth, plus a poisik analyze <file|url> CLI with --json/--open flags.' },
+        { capability: 'Command Palette',                what: 'Cmd+K palette with auth-aware actions, different command sets for signed-in vs. anonymous visitors.' },
+        { capability: 'FR / EN i18n',                   what: 'Full next-intl locale routing and translated transactional copy across the whole authenticated app, not just marketing pages.' },
+      ],
     },
   },
   {
