@@ -71,7 +71,10 @@ export default function ProjectDetailPage() {
               : <div className="proj-detail-icon"><ProjectIcon name={project.icon} size={40} /></div>
             }
             <div className="pd-title-row">
-              <h1 className="pd-title">{project.title}</h1>
+              <div className="pd-title-line">
+                <h1 className="pd-title">{project.title}</h1>
+                {details.version && <span className="pd-version-badge">v{details.version}</span>}
+              </div>
               <span className={`proj-detail-status ${statusClass}`}>{details.status}</span>
             </div>
           </div>

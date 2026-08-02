@@ -1,0 +1,164 @@
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - link "MAS" [ref=e4] [cursor=pointer]:
+      - /url: /
+    - list [ref=e5]:
+      - listitem [ref=e6]:
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: /#about
+      - listitem [ref=e8]:
+        - link "Experience" [ref=e9] [cursor=pointer]:
+          - /url: /#experience
+      - listitem [ref=e10]:
+        - link "Projects" [ref=e11] [cursor=pointer]:
+          - /url: /#projects
+      - listitem [ref=e12]:
+        - link "Skills" [ref=e13] [cursor=pointer]:
+          - /url: /#skills
+      - listitem [ref=e14]:
+        - link "Chat" [ref=e15] [cursor=pointer]:
+          - /url: /#chat
+      - listitem [ref=e16]:
+        - link "Contact" [ref=e17] [cursor=pointer]:
+          - /url: /#contact
+  - generic:
+    - link "About":
+      - /url: /#about
+    - link "Experience":
+      - /url: /#experience
+    - link "Projects":
+      - /url: /#projects
+    - link "Skills":
+      - /url: /#skills
+    - link "Chat":
+      - /url: /#chat
+    - link "Contact":
+      - /url: /#contact
+    - generic:
+      - link "Email me":
+        - /url: mailto:mohamedaminesaadani79@gmail.com
+      - link "LinkedIn":
+        - /url: https://www.linkedin.com/in/mohamed-amine-saadani/
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - link "Home" [ref=e20] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e21]: ›
+      - link "Projects" [ref=e22] [cursor=pointer]:
+        - /url: /#projects
+      - generic [ref=e23]: ›
+      - link "AI-Powered" [ref=e24] [cursor=pointer]:
+        - /url: /projects/ai-powered
+      - generic [ref=e25]: ›
+      - generic [ref=e26]: Poisik
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - img "Poisik" [ref=e29]
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - heading "Poisik" [level=1] [ref=e32]
+            - generic [ref=e33]: v1.0
+          - generic [ref=e34]: Live
+      - paragraph [ref=e35]: AI-powered UX/UI design audit platform that turns any screenshot into a scored, actionable critique report — built as a production-grade SaaS, not a demo.
+      - generic [ref=e36]:
+        - link "Live Platform" [ref=e37] [cursor=pointer]:
+          - /url: https://poisik-design-critic.vercel.app/en
+        - link "Source Code" [ref=e42] [cursor=pointer]:
+          - /url: https://github.com/SaadaniMohamedAmine/poisik-design-critic
+      - generic [ref=e43]:
+        - generic [ref=e44]: Dual-AI Engine
+        - generic [ref=e46]: Vision-Based Audit
+        - generic [ref=e48]: Stripe Billing
+        - generic [ref=e50]: Production Grade
+    - generic [ref=e52]:
+      - generic [ref=e54]:
+        - heading "Overview" [level=3] [ref=e55]
+        - paragraph [ref=e56]: Poisik is an AI-powered UX/UI design audit platform engineered as a production-grade SaaS. It combines a dual-AI critique engine (Groq Llama 3.3 primary, Gemini fallback with automatic failover) that scores any uploaded screenshot against real usability and accessibility heuristics, project-based history with real before/after comparison, Stripe billing with server-enforced plan gates (Free / Pro / Enterprise), a full notification and onboarding system, and complete FR/EN internationalization — all backed by a Neon Postgres schema.
+        - heading "Capability Map" [level=3] [ref=e57]
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - generic [ref=e60]: Screenshot-to-Report Pipeline
+            - generic [ref=e61]: "Upload a screenshot, get a structured critique: overall score, per-category breakdown, annotated issues with severity, and one-click \"fix in code\" snippets."
+          - generic [ref=e62]:
+            - generic [ref=e63]: Dual-AI Critique Engine
+            - generic [ref=e64]: Groq Llama 3.3 (vision) primary, Gemini fallback with automatic failover; Zod-validated output schema plus a real WCAG contrast re-check layered on top of the AI's own accessibility read.
+          - generic [ref=e65]:
+            - generic [ref=e66]: Projects & History
+            - generic [ref=e67]: Every analysis grouped by project, with real thumbnails, scores, and issue counts — no synthetic placeholders.
+          - generic [ref=e68]:
+            - generic [ref=e69]: Compare Mode
+            - generic [ref=e70]: Side-by-side before/after audits with a computed score-lift percentage, category-delta table, and an AI-generated "key improvements" summary.
+          - generic [ref=e71]:
+            - generic [ref=e72]: Public Sharing & PDF Export
+            - generic [ref=e73]: Toggle any report to a public read-only link, or export a branded PDF, without exposing the owner's authenticated shell.
+          - generic [ref=e74]:
+            - generic [ref=e75]: Stripe Billing & Plan Gates
+            - generic [ref=e76]: Free / Pro / Enterprise tiers enforced server-side, Customer Portal for self-serve cancellation, real usage-limit modal instead of a dead paywall.
+          - generic [ref=e77]:
+            - generic [ref=e78]: Notifications & Onboarding
+            - generic [ref=e79]: Persistent notification center, toast layer, a 4-step guided product tour with live DOM spotlighting, and a getting-started checklist, all state-tracked per user.
+          - generic [ref=e80]:
+            - generic [ref=e81]: Public API & CLI
+            - generic [ref=e82]: POST /api/v1/analyze with API-key auth, plus a poisik analyze <file|url> CLI with --json/--open flags.
+          - generic [ref=e83]:
+            - generic [ref=e84]: Command Palette
+            - generic [ref=e85]: Cmd+K palette with auth-aware actions, different command sets for signed-in vs. anonymous visitors.
+          - generic [ref=e86]:
+            - generic [ref=e87]: FR / EN i18n
+            - generic [ref=e88]: Full next-intl locale routing and translated transactional copy across the whole authenticated app, not just marketing pages.
+        - heading "Key Highlights" [level=3] [ref=e89]
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - generic [ref=e92]: ✓
+            - text: Dual-AI failover — Groq primary, Gemini fallback, automatic switch on error, with a real WCAG contrast re-check layered on top of the AI's raw score
+          - listitem [ref=e93]:
+            - generic [ref=e94]: ✓
+            - text: Compare mode with computed deltas — real score-lift %, category-delta table, AI-generated "key improvements," not templated copy
+          - listitem [ref=e95]:
+            - generic [ref=e96]: ✓
+            - text: Production-grade billing — Stripe Checkout + Customer Portal, server-enforced plan limits, refund-on-failure usage credits
+          - listitem [ref=e97]:
+            - generic [ref=e98]: ✓
+            - text: Public API + CLI — script audits outside the browser via API key or the poisik CLI
+          - listitem [ref=e99]:
+            - generic [ref=e100]: ✓
+            - text: FR / EN i18n across the entire authenticated app
+          - listitem [ref=e101]:
+            - generic [ref=e102]: ✓
+            - text: Full onboarding system — guided tour, notification center, getting-started checklist
+          - listitem [ref=e103]:
+            - generic [ref=e104]: ✓
+            - text: Zod-validated AI output, sanitized error messages on failure
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - generic [ref=e107]: Tech Stack
+          - generic [ref=e108]:
+            - generic [ref=e109]: Next.js 16
+            - generic [ref=e110]: React 19
+            - generic [ref=e111]: TypeScript
+            - generic [ref=e112]: Tailwind CSS v4
+            - generic [ref=e113]: Prisma 7
+            - generic [ref=e114]: Neon Postgres
+            - generic [ref=e115]: NextAuth v5
+            - generic [ref=e116]: Groq Llama 3.3
+            - generic [ref=e117]: Gemini
+            - generic [ref=e118]: Stripe
+            - generic [ref=e119]: next-intl
+            - generic [ref=e120]: Playwright
+            - generic [ref=e121]: UploadThing
+            - generic [ref=e122]: Sentry
+            - generic [ref=e123]: Vitest
+        - generic [ref=e124]:
+          - generic [ref=e125]: Category
+          - link "AI-Powered" [ref=e126] [cursor=pointer]:
+            - /url: /projects/ai-powered
+        - generic [ref=e130]:
+          - generic [ref=e131]: Links
+          - generic [ref=e132]:
+            - link "Live Platform" [ref=e133] [cursor=pointer]:
+              - /url: https://poisik-design-critic.vercel.app/en
+            - link "GitHub" [ref=e137] [cursor=pointer]:
+              - /url: https://github.com/SaadaniMohamedAmine/poisik-design-critic
+  - contentinfo [ref=e138]:
+    - paragraph [ref=e139]: © 2025 Mohamed Amine Saadani · Senior Front-End Developer & Product Tech Manager
+    - paragraph [ref=e140]: Built with passion & React
