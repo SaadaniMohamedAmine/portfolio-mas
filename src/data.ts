@@ -651,6 +651,26 @@ export const projects: ProjectItem[] = [
     },
   },
   {
+    icon: 'Mic',
+    title: 'Linqis',
+    description: 'AI-powered meeting summarizer that turns recordings into structured decisions, action items, and searchable knowledge — dual-AI transcription and analysis, RAG-powered chat across your meeting history, and native Zoom, Google Calendar, Slack, and Notion integrations.',
+    metrics: ['Dual-AI Engine', 'RAG Chat Search', '5+ Integrations', 'Production-Grade'],
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Express', 'Prisma 7', 'Neon PostgreSQL', 'BullMQ', 'Upstash Redis', 'Groq', 'Gemini', 'Stripe', 'NextAuth v5', 'Tailwind CSS', 'Framer Motion', 'Notion API'],
+    category: 'ai',
+    published: true,
+    details: {
+      longDescription: 'Linqis is an AI-powered meeting summarizer engineered as a production-grade SaaS. It turns raw recordings into structured decisions, action items, and searchable knowledge using a dual-AI transcription and analysis pipeline, then lets you chat across your entire meeting history via RAG-powered search — all backed by native Zoom, Google Calendar, Slack, and Notion integrations.',
+      highlights: [
+        'Dual-AI pipeline — separate engines for transcription and analysis, turning raw recordings into structured decisions and action items',
+        'RAG-powered chat — ask questions across your entire meeting history, not just a single transcript',
+        'Native integrations — Zoom, Google Calendar, Slack, and Notion, keeping recordings and action items in sync with the tools teams already use',
+        'Background job processing — BullMQ + Upstash Redis handle transcription and analysis asynchronously',
+        'Production-grade foundations — Stripe billing, NextAuth v5 auth, Express API layer, Prisma 7 on Neon Postgres',
+      ],
+      status: 'In Progress',
+    },
+  },
+  {
     icon: 'FileText',
     title: 'AI Resume Analyzer',
     description: 'Upload a CV and a job description — AI scores the match, highlights gaps, and rewrites weak sections to boost application success.',
