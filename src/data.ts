@@ -657,6 +657,7 @@ export const projects: ProjectItem[] = [
     metrics: ['Dual-AI Engine', 'RAG Chat Search', '5+ Integrations', 'Production-Grade'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Express', 'Prisma 7', 'Neon PostgreSQL', 'BullMQ', 'Upstash Redis', 'Groq', 'Gemini', 'Stripe', 'NextAuth v5', 'Tailwind CSS', 'Framer Motion', 'Notion API'],
     category: 'ai',
+    logoImage: '/linqis-icon.png',
     published: true,
     details: {
       longDescription: 'Linqis is an AI-powered meeting summarizer engineered as a production-grade SaaS. It turns raw recordings into structured decisions, action items, and searchable knowledge using a dual-AI transcription and analysis pipeline, then lets you chat across your entire meeting history via RAG-powered search — all backed by native Zoom, Google Calendar, Slack, and Notion integrations.',
