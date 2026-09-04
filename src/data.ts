@@ -790,6 +790,7 @@ export const projects: ProjectItem[] = [
     metrics: ['Dual-AI Engine', 'Cited RAG Chat', '3-Tier Billing', 'Production-Grade'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma 7', 'Neon PostgreSQL', 'Upstash Vector', 'Vercel Blob', 'Groq Llama 3.3', 'Gemini 2.0', 'Better Auth', 'Stripe', 'react-pdf', 'LangChain.js', 'Vercel AI SDK'],
     category: 'ai',
+    logoImage: '/excerpta-icon.png',
     published: true,
     details: {
       longDescription: 'Excerpta is a citation-grounded RAG platform engineered as a production SaaS — a portfolio cornerstone that demonstrates retrieval-augmented generation done right: every answer is anchored to a clickable citation tag that jumps straight to the exact page and highlighted passage it was drawn from. The platform combines a dual-AI orchestrator (Groq primary, Gemini fallback) for chat and embeddings, a multi-format ingestion pipeline (PDF, DOCX, CSV, code) with per-page / per-row / per-line citation tracking, always-assigned Collections for cross-document conversations, and a complete 3-tier Stripe billing stack (Free / Pro / Team) with quota enforcement — from database schema to UI polish.',
