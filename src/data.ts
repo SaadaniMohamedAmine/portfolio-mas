@@ -784,6 +784,25 @@ export const projects: ProjectItem[] = [
     },
   },
   {
+    icon: 'BookOpen',
+    title: 'Excerpta',
+    description: 'Turns any document into a conversation — every answer cited to the exact page.',
+    metrics: ['Dual-AI Engine', 'Cited RAG Chat', '3-Tier Billing', 'Production-Grade'],
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma', 'Neon Postgres', 'Upstash Vector', 'Vercel Blob', 'Groq Llama 3.3', 'Gemini 2.0', 'Better Auth', 'Stripe', 'react-pdf', 'LangChain.js', 'Vercel AI SDK', 'Vercel Workflows'],
+    category: 'ai',
+    published: true,
+    details: {
+      longDescription: 'Excerpta turns any document into a conversation — every answer grounded and cited to the exact page it came from. It runs on a dual-AI engine (Groq Llama 3.3 and Gemini 2.0) for fast, cost-aware inference, a citation-first RAG chat layer over Upstash Vector, and 3-tier Stripe billing — all built as a production-grade SaaS on Next.js 16 and Neon Postgres.',
+      highlights: [
+        'Dual-AI engine — Groq Llama 3.3 and Gemini 2.0 power fast, cited responses across every document',
+        'Cited RAG chat — every answer traces back to the exact page it was pulled from, not a guess',
+        '3-tier billing — Stripe-powered plans enforced server-side, from free to production scale',
+        'Production-grade foundations — Next.js 16, Prisma on Neon Postgres, Upstash Vector, and Vercel Blob storage',
+      ],
+      status: 'In Progress',
+    },
+  },
+  {
     icon: 'FileText',
     title: 'AI Resume Analyzer',
     description: 'Upload a CV and a job description — AI scores the match, highlights gaps, and rewrites weak sections to boost application success.',
