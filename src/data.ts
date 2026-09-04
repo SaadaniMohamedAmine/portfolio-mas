@@ -807,6 +807,7 @@ export const projects: ProjectItem[] = [
       status: 'Live',
       live: 'https://excerpta-chatbot-document.vercel.app/',
       github: 'https://github.com/SaadaniMohamedAmine/excerpta-chatbot-document',
+      videoEmbed: 'https://drive.google.com/file/d/1tNzee-lB2CQyA42orI65p1UXjuoRN-UL/preview',
       capabilities: [
         { capability: 'Citation-Grounded RAG Chat', what: 'Every assistant response streams with page-level citations; clicking a tag scrolls the PDF/CSV/code viewer to the exact passage and highlights it in gold.' },
         { capability: 'Dual-AI Orchestrator',        what: 'Groq (Llama 3.3) primary for chat and embeddings, Gemini as automatic fallback — LangChain.js retrieval chain + Vercel AI SDK streaming.' },
