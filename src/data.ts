@@ -805,6 +805,7 @@ export const projects: ProjectItem[] = [
         'Light/dark theme parity — full "Ink & Citation Gold" design system implemented consistently in both',
       ],
       status: 'Live',
+      version: '1.0',
       live: 'https://excerpta-chatbot-document.vercel.app/',
       github: 'https://github.com/SaadaniMohamedAmine/excerpta-chatbot-document',
       videoEmbed: 'https://drive.google.com/file/d/1tNzee-lB2CQyA42orI65p1UXjuoRN-UL/preview',
