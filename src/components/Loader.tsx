@@ -1,10 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+
+// Module-scoped flag: persists across client-side route changes but resets
+// on a real page load/reload, so the intro only ever plays once per visit.
+let hasPlayedIntro = false
 
 export default function Loader() {
+  const alreadyPlayed = useRef(hasPlayedIntro).current
   const [hiding, setHiding] = useState(false)
-  const [done,   setDone]   = useState(false)
+  const [done,   setDone]   = useState(alreadyPlayed)
 
   useEffect(() => {
+    if (alreadyPlayed) return
+    hasPlayedIntro = true
+
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
     window.scrollTo({ top: 0, behavior: 'instant' })
