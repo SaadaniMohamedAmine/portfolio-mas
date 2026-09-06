@@ -989,6 +989,38 @@ footer .footer-sub { margin-top: 8px; font-size: .75rem; color: #444; }
   100% { width: 100%; }
 }
 
+/* ── ROUTE TRANSITION LOADER ──────────────────────── */
+.route-loader-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(13,13,13,.55);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  animation: route-loader-fade-in .2s ease;
+}
+.route-loader {
+  width: 45px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(var(--accent) 0 0);
+  background:
+    var(--c) 0%   50%,
+    var(--c) 50%  50%,
+    var(--c) 100% 50%;
+  background-size: 20% 100%;
+  animation: route-loader-bars 1s infinite linear;
+}
+@keyframes route-loader-bars {
+  0%   { background-size: 20% 100%, 20% 100%, 20% 100%; }
+  33%  { background-size: 20% 10% , 20% 100%, 20% 100%; }
+  50%  { background-size: 20% 100%, 20% 10% , 20% 100%; }
+  66%  { background-size: 20% 100%, 20% 100%, 20% 10% ; }
+  100% { background-size: 20% 100%, 20% 100%, 20% 100%; }
+}
+@keyframes route-loader-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* ── FLOATING CHAT ────────────────────────────────── */
 .fc-root {
   position: fixed;
