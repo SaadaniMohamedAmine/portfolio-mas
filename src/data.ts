@@ -65,10 +65,10 @@ export const hero: HeroData = {
   title: 'Senior Front-End Developer · Product Tech Manager',
   summary: 'Building high-performance web applications and leading Agile teams. 4+ years turning complex product visions into elegant, scalable digital experiences.',
   stats: [
-    { value: '4+',  label: 'Years Experience' },
-    { value: '40%', label: 'Core Web Vitals'  },
-    { value: '30%', label: 'Faster MVPs'      },
-    { value: '5K+', label: 'Daily Users'      },
+    { value: '4+',  label: 'Years Experience'         },
+    { value: '30%', label: 'Core Web Vitals Improved' },
+    { value: '7',   label: 'AI Products Shipped'      },
+    { value: '5K+', label: 'Daily Users'              },
   ],
 }
 
