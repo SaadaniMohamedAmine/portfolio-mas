@@ -45,14 +45,6 @@ export default function Contact() {
             </div>
           </a>
 
-          <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="contact-item">
-            <span className="contact-icon">📞</span>
-            <div>
-              <div className="contact-label">Phone</div>
-              <div className="contact-val">{contact.phone}</div>
-            </div>
-          </a>
-
           <a href={contact.linkedin} target="_blank" rel="noreferrer" className="contact-item">
             <span className="contact-icon">🔗</span>
             <div>
