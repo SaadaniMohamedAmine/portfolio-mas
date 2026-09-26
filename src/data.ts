@@ -1287,14 +1287,19 @@ export const projects: ProjectItem[] = [
 
 export const skills: SkillCategory[] = [
   {
+    icon: '🤖',
+    category: 'AI & Machine Learning',
+    items: ['LLM Orchestration', 'Prompt Engineering', 'RAG', 'Vector Search', 'Agentic Workflows', 'Function Calling', 'Multimodal AI', 'SSE Streaming', 'AI-Assisted Dev'],
+  },
+  {
     icon: '⚡',
     category: 'Front-End',
-    items: ['React.js', 'Next.js', 'TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Tailwind CSS', 'Material UI', 'Ant Design', 'Redux Toolkit', 'React Query', 'Vite', 'Webpack'],
+    items: ['React 19', 'Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Redux Toolkit', 'React Query', 'Vite'],
   },
   {
     icon: '🔧',
     category: 'Backend & APIs',
-    items: ['Node.js', 'Express.js', 'RESTful APIs', 'MongoDB', 'Firebase', 'Meteor.js'],
+    items: ['Node.js', 'Express.js', 'RESTful APIs', 'Prisma 7', 'Neon PostgreSQL', 'NextAuth v5', 'Better Auth'],
   },
   {
     icon: '📦',
@@ -1304,7 +1309,7 @@ export const skills: SkillCategory[] = [
   {
     icon: '🛠',
     category: 'DevOps & Tools',
-    items: ['GitHub', 'GitHub Actions', 'Docker', 'ESLint', 'Prettier', 'Jest', 'React Testing Library', 'Google Analytics'],
+    items: ['GitHub', 'GitHub Actions', 'Docker', 'Vercel', 'ESLint', 'Prettier', 'Vitest', 'Playwright', 'Google Analytics'],
   },
 ]
 
