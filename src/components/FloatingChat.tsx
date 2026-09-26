@@ -8,7 +8,7 @@ interface Message {
 
 const WELCOME: Message = {
   role: 'bot',
-  text: "Hi there 👋 I'm Amine's AI assistant. Ask me anything about his experience, skills or projects!",
+  text: "Hi there 👋 I'm Amine's AI Twin. Ask me anything about his experience, skills or projects!",
 }
 
 export default function FloatingChat() {
@@ -73,8 +73,8 @@ export default function FloatingChat() {
               <span className="fc-online-dot" />
             </div>
             <div>
-              <div className="fc-hname">Mohamed Amine</div>
-              <div className="fc-hstatus">● Typically replies instantly</div>
+              <div className="fc-hname">Amine's AI Twin</div>
+              <div className="fc-hstatus">● AI · Instant replies</div>
             </div>
           </div>
           <button className="fc-close" onClick={() => setOpen(false)} aria-label="Close chat">✕</button>

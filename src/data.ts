@@ -50,7 +50,7 @@ export interface ProjectCategory {
 export interface SkillCategory { icon: string; category: string; items: string[] }
 
 export interface ContactData {
-  email: string; phone: string; linkedin: string; location: string
+  email: string; linkedin: string; github: string; location: string
 }
 
 export interface FooterData { text: string; subtext: string }
@@ -65,10 +65,10 @@ export const hero: HeroData = {
   title: 'Senior Front-End Developer · Product Tech Manager',
   summary: 'Building high-performance web applications and leading Agile teams. 4+ years turning complex product visions into elegant, scalable digital experiences.',
   stats: [
-    { value: '4+',  label: 'Years Experience' },
-    { value: '40%', label: 'Core Web Vitals'  },
-    { value: '30%', label: 'Faster MVPs'      },
-    { value: '5K+', label: 'Daily Users'      },
+    { value: '4+',  label: 'Years Experience'         },
+    { value: '30%', label: 'Core Web Vitals Improved' },
+    { value: '7',   label: 'AI Products Shipped'      },
+    { value: '5K+', label: 'Daily Users'              },
   ],
 }
 
@@ -79,11 +79,12 @@ export const about: AboutData = {
     "I've worked across the full product lifecycle — from ideation and roadmaps to production-grade releases — always obsessing over performance, code quality, and user experience.",
   ],
   details: [
-    { icon: '📍', label: 'Location',    value: 'Monastir, Tunisia',                                    href: null },
+    { icon: '📍', label: 'Location',    value: 'Tunis, Tunisia',                                    href: null },
     { icon: '🎓', label: 'Education',   value: 'Bachelor of Electronics · ISSAT Sousse\nFull Stack JS · GoMyCode', href: null },
     { icon: '💼', label: 'Latest Role', value: 'Product Tech Manager @ WayConnect',                    href: null },
     { icon: '✉️', label: 'Email',       value: 'mohamedaminesaadani79@gmail.com',                      href: 'mailto:mohamedaminesaadani79@gmail.com' },
     { icon: '🔗', label: 'LinkedIn',    value: 'linkedin.com/in/mohamed-amine-saadani',                href: 'https://www.linkedin.com/in/mohamed-amine-saadani/' },
+    { icon: '💻', label: 'GitHub',      value: 'github.com/SaadaniMohamedAmine',                      href: 'https://github.com/SaadaniMohamedAmine' },
   ],
   languages: [
     { name: 'Arabic',  level: 'Native', highlight: true  },
@@ -155,7 +156,7 @@ export const experience: ExperienceItem[] = [
 export const projectCategories: ProjectCategory[] = [
   {
     id: 'ai', iconName: 'Bot', label: 'AI-Powered',
-    description: 'Applications intelligentes intégrant des LLMs, du traitement du langage naturel et des pipelines de données — de l\'analyse de code à la génération de contenu en passant par la transcription de réunions.',
+    description: 'Intelligent applications integrating LLMs, natural language processing and data pipelines — from code analysis to content generation to meeting transcription.',
     poweredBy: [
       { icon: 'Brain',    label: 'LLM'     },
       { icon: 'Sparkles', label: 'Gemini'  },
@@ -165,7 +166,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'frontend', iconName: 'Zap', label: 'Frontend Showcases',
-    description: 'Expériences UI haute-performance — design systems, data visualizations interactives, jeux browser et librairies d\'animation CSS — toutes optimisées pour les Core Web Vitals.',
+    description: 'High-performance UI experiences — design systems, interactive data visualizations, browser games and CSS animation libraries — all optimized for Core Web Vitals.',
     poweredBy: [
       { icon: 'Layers',   label: 'React'   },
       { icon: 'Gauge',    label: 'Vite'    },
@@ -175,7 +176,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'saas', iconName: 'LayoutDashboard', label: 'SaaS & Dashboards',
-    description: 'Plateformes SaaS complètes et tableaux de bord analytiques : CRM, e-learning, RH, e-commerce et marketing — construits pour la scalabilité et la conversion.',
+    description: 'Full-featured SaaS platforms and analytics dashboards: CRM, e-learning, HR, e-commerce and marketing — built for scalability and conversion.',
     poweredBy: [
       { icon: 'Database', label: 'MongoDB' },
       { icon: 'CreditCard', label: 'Stripe' },
@@ -185,7 +186,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'realtime', iconName: 'Radio', label: 'Real-Time',
-    description: 'Applications temps réel à haute disponibilité — matching géolocalisé, collaboration multi-utilisateurs, suivi de prix live — propulsées par WebSockets et Meteor.',
+    description: 'High-availability real-time applications — geolocated matching, multi-user collaboration, live price tracking — powered by WebSockets and Meteor.',
     poweredBy: [
       { icon: 'Wifi',     label: 'WebSocket' },
       { icon: 'MapPin',   label: 'Geo'     },
@@ -195,7 +196,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'devtools', iconName: 'Wrench', label: 'Developer Tools',
-    description: 'Outils construits pour les développeurs : scaffolding CLI, serveurs mock API et gestionnaires de snippets — pour accélérer le workflow et standardiser les pratiques.',
+    description: 'Tools built for developers: CLI scaffolding, mock API servers and snippet managers — to speed up workflow and standardize practices.',
     poweredBy: [
       { icon: 'Terminal', label: 'CLI'     },
       { icon: 'GitBranch', label: 'Git'   },
@@ -205,7 +206,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'product', iconName: 'Package', label: 'Product-Led',
-    description: 'Projets à impact produit mesurable — stratégie Agile, billing SaaS, PWA offline-first et funnels d\'onboarding optimisés pour la conversion trial-to-paid.',
+    description: 'Projects with measurable product impact — Agile strategy, SaaS billing, offline-first PWAs and onboarding funnels optimized for trial-to-paid conversion.',
     poweredBy: [
       { icon: 'Target',   label: 'Agile'  },
       { icon: 'Smartphone', label: 'PWA'  },
@@ -221,7 +222,7 @@ export const projects: ProjectItem[] = [
     icon: 'Code2',
     title: 'PulseAI',
     description: 'Full-stack SaaS platform that puts a senior-level AI reviewer inside every pull request — dual-AI engine, one-click auto-fix, and a full production SaaS shell.',
-    metrics: ['Dual-AI Engine', '41 API Routes', '4-Tier Billing', 'Production-Grade'],
+    metrics: ['Dual-AI Engine', '41 API Routes', '4-Tier Billing', 'Open REST API'],
     stack: ['Next.js 16', 'React 19', 'Groq Llama 3.3', 'Gemini 2.0', 'Stripe', 'Prisma', 'Neon Postgres', 'Upstash Redis', 'NextAuth v5', 'Tailwind v4', 'Vitest', 'Playwright'],
     category: 'ai',
     logoImage: '/ai-code-reviewer.svg',
@@ -283,8 +284,8 @@ export const projects: ProjectItem[] = [
     icon: 'PenLine',
     title: 'Verbio AI',
     description: "AI-powered writing assistant that transforms ideas into polished documents — with streaming generation, a token economy, and multi-language support out of the box.",
-    metrics: ['SSE Streaming', 'Stripe Billing', 'FR / EN i18n', 'Production Grade'],
-    stack: ['Next.js 15', 'React 19', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Stripe', 'next-intl', 'Vercel'],
+    metrics: ['SSE Streaming', 'Stripe Billing', 'FR / EN i18n', 'Credit Ledger'],
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Stripe', 'next-intl', 'Vercel'],
     category: 'ai',
     logoImage: '/verbio-ai.svg',
     published: true,
@@ -369,7 +370,7 @@ export const projects: ProjectItem[] = [
     icon: 'KanbanSquare',
     title: 'Axiom',
     description: 'Enterprise Kanban platform built as a full-production SaaS application — real-time collaboration, AI-powered task intelligence, sprint analytics, and a complete multi-tenant billing shell deployed on Vercel.',
-    metrics: ['Realtime Collab', 'Dual-AI Engine', 'Sprint Analytics', 'Production Grade'],
+    metrics: ['Realtime Collab', 'Dual-AI Engine', 'Sprint Analytics', 'PWA-Ready'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Pusher Channels', 'Groq', 'Gemini', 'Prisma 7', 'Neon PostgreSQL', 'Stripe', 'Better Auth', 'Framer Motion v12', 'next-intl', 'Resend', 'Vercel', 'Sentry'],
     category: 'ai',
     logoImage: '/axiom-icon.png',
@@ -451,7 +452,7 @@ export const projects: ProjectItem[] = [
     icon: 'FileSearch',
     title: 'Résona',
     description: 'AI-powered resume and job-match platform — semantic scoring via real vector embeddings (pgvector), AI section rewriting, tailored cover letters, and a kanban application tracker, with a public no-signup demo and full FR/EN support.',
-    metrics: ['pgvector Search', 'Dual-AI Pipeline', 'Stripe Billing', 'Production-Grade'],
+    metrics: ['pgvector Search', 'Dual-AI Engine', 'Stripe Billing', 'No-Signup Demo'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Groq Llama 3.3', 'HuggingFace', 'Neon PostgreSQL', 'pgvector', 'Prisma', 'NextAuth v5', 'Stripe', 'Upstash Redis', 'UploadThing', 'next-intl', 'Sentry'],
     category: 'ai',
     logoImage: '/resona-icon.png',
@@ -531,7 +532,7 @@ export const projects: ProjectItem[] = [
     icon: 'ScanEye',
     title: 'Poisik',
     description: 'AI-powered UX/UI design audit platform that turns any screenshot into a scored, actionable critique report — built as a production-grade SaaS, not a demo.',
-    metrics: ['Dual-AI Engine', 'Vision-Based Audit', 'Stripe Billing', 'Production Grade'],
+    metrics: ['Dual-AI Engine', 'Vision-Based Audit', 'Stripe Billing', 'Compare Mode'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma 7', 'Neon Postgres', 'NextAuth v5', 'Groq Llama 3.3', 'Gemini', 'Stripe', 'next-intl', 'Playwright', 'UploadThing', 'Sentry', 'Vitest'],
     category: 'ai',
     logoImage: '/poisik-icon.png',
@@ -654,7 +655,7 @@ export const projects: ProjectItem[] = [
     icon: 'Mic',
     title: 'Linqis',
     description: 'AI-powered meeting summarizer that turns raw recordings into structured decisions, action items, and searchable knowledge — built as a production-grade SaaS, not a demo.',
-    metrics: ['Dual-AI Engine', 'RAG Chat Search', '5+ Integrations', 'Production Grade'],
+    metrics: ['Dual-AI Engine', 'RAG Chat Search', '5+ Integrations', 'BullMQ Queue'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Express', 'Prisma 7', 'Neon Postgres', 'BullMQ', 'Upstash Redis', 'NextAuth v5', 'Groq', 'Gemini', 'Stripe', 'Tailwind CSS', 'Playwright', 'Vitest'],
     category: 'ai',
     logoImage: '/linqis-icon.png',
@@ -787,7 +788,7 @@ export const projects: ProjectItem[] = [
     icon: 'BookOpen',
     title: 'Excerpta',
     description: 'Document intelligence platform that turns any PDF, Word file, spreadsheet, or codebase into a citation-grounded conversation — every answer traceable to the exact page and passage it came from, with always-assigned Collections for cross-document conversations.',
-    metrics: ['Dual-AI Engine', 'Cited RAG Chat', '3-Tier Billing', 'Production-Grade'],
+    metrics: ['Dual-AI Engine', 'Cited RAG Chat', '3-Tier Billing', 'Inline Collections'],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma 7', 'Neon PostgreSQL', 'Upstash Vector', 'Vercel Blob', 'Groq Llama 3.3', 'Gemini 2.0', 'Better Auth', 'Stripe', 'react-pdf', 'LangChain.js', 'Vercel AI SDK'],
     category: 'ai',
     logoImage: '/excerpta-icon.png',
@@ -1287,14 +1288,19 @@ export const projects: ProjectItem[] = [
 
 export const skills: SkillCategory[] = [
   {
+    icon: '🤖',
+    category: 'AI & Machine Learning',
+    items: ['LLM Orchestration', 'Prompt Engineering', 'RAG', 'Vector Search', 'Agentic Workflows', 'Function Calling', 'Multimodal AI', 'SSE Streaming', 'AI-Assisted Dev'],
+  },
+  {
     icon: '⚡',
     category: 'Front-End',
-    items: ['React.js', 'Next.js', 'TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3', 'Tailwind CSS', 'Material UI', 'Ant Design', 'Redux Toolkit', 'React Query', 'Vite', 'Webpack'],
+    items: ['React 19', 'Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Redux Toolkit', 'React Query', 'Vite'],
   },
   {
     icon: '🔧',
     category: 'Backend & APIs',
-    items: ['Node.js', 'Express.js', 'RESTful APIs', 'MongoDB', 'Firebase', 'Meteor.js'],
+    items: ['Node.js', 'Express.js', 'RESTful APIs', 'Prisma 7', 'Neon PostgreSQL', 'NextAuth v5', 'Better Auth'],
   },
   {
     icon: '📦',
@@ -1304,20 +1310,20 @@ export const skills: SkillCategory[] = [
   {
     icon: '🛠',
     category: 'DevOps & Tools',
-    items: ['GitHub', 'GitHub Actions', 'Docker', 'ESLint', 'Prettier', 'Jest', 'React Testing Library', 'Google Analytics'],
+    items: ['GitHub', 'GitHub Actions', 'Docker', 'Vercel', 'ESLint', 'Prettier', 'Vitest', 'Playwright', 'Google Analytics'],
   },
 ]
 
 export const contact: ContactData = {
   email:    'mohamedaminesaadani79@gmail.com',
-  phone:    '+216 58 147 086',
   linkedin: 'https://www.linkedin.com/in/mohamed-amine-saadani/',
-  location: 'Beni Hassen, Monastir, Tunisia',
+  github:   'https://github.com/SaadaniMohamedAmine',
+  location: 'Monastir, Tunisia',
 }
 
 export const footer: FooterData = {
-  text:    '© 2025 Mohamed Amine Saadani · Senior Front-End Developer & Product Tech Manager',
-  subtext: 'Built with passion & React',
+  text:    '© 2026 Mohamed Amine Saadani · Senior Front-End Developer & Product Tech Manager',
+  subtext: 'Built with passion & Next.js',
 }
 
 export const chatSuggestions: string[] = ['Tech stack?', 'Open to work?', 'Key achievements?', 'Management experience?']

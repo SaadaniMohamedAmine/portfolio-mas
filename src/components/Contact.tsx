@@ -45,19 +45,19 @@ export default function Contact() {
             </div>
           </a>
 
-          <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="contact-item">
-            <span className="contact-icon">📞</span>
-            <div>
-              <div className="contact-label">Phone</div>
-              <div className="contact-val">{contact.phone}</div>
-            </div>
-          </a>
-
           <a href={contact.linkedin} target="_blank" rel="noreferrer" className="contact-item">
             <span className="contact-icon">🔗</span>
             <div>
               <div className="contact-label">LinkedIn</div>
               <div className="contact-val">linkedin.com/in/mohamed-amine-saadani</div>
+            </div>
+          </a>
+
+          <a href={contact.github} target="_blank" rel="noreferrer" className="contact-item">
+            <span className="contact-icon">💻</span>
+            <div>
+              <div className="contact-label">GitHub</div>
+              <div className="contact-val">github.com/SaadaniMohamedAmine</div>
             </div>
           </a>
 
@@ -68,6 +68,10 @@ export default function Contact() {
               <div className="contact-val">{contact.location}</div>
             </div>
           </div>
+
+          <a href="/Mohamed-Amine-Saadani-CV.pdf" download className="btn-outline cv-download-btn">
+            📄 Download CV
+          </a>
         </div>
 
         {/* Form column */}
