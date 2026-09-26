@@ -26,6 +26,9 @@ export default function Hero() {
               onClick={e => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) }}>
               View Projects
             </a>
+            <a href="/Mohamed-Amine-Saadani-CV.pdf" download className="btn-outline">
+              Download CV
+            </a>
           </div>
 
           <div className="hero-stats">

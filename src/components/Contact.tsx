@@ -53,6 +53,14 @@ export default function Contact() {
             </div>
           </a>
 
+          <a href={contact.github} target="_blank" rel="noreferrer" className="contact-item">
+            <span className="contact-icon">💻</span>
+            <div>
+              <div className="contact-label">GitHub</div>
+              <div className="contact-val">github.com/SaadaniMohamedAmine</div>
+            </div>
+          </a>
+
           <div className="contact-item">
             <span className="contact-icon">📍</span>
             <div>
@@ -60,6 +68,10 @@ export default function Contact() {
               <div className="contact-val">{contact.location}</div>
             </div>
           </div>
+
+          <a href="/Mohamed-Amine-Saadani-CV.pdf" download className="btn-outline cv-download-btn">
+            📄 Download CV
+          </a>
         </div>
 
         {/* Form column */}

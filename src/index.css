@@ -124,6 +124,8 @@ section { padding: 100px 10%; }
   transition: background .2s; display: inline-block;
 }
 .btn-outline:hover { background: rgba(201,169,110,.1); }
+.about-cv-btn { margin-top: 28px; align-self: flex-start; }
+.cv-download-btn { text-align: center; margin-top: 4px; }
 .hero-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 56px; }
 .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); white-space: nowrap; }
 .stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }

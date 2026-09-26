@@ -21,6 +21,10 @@ export default function About() {
               </span>
             ))}
           </div>
+
+          <a href="/Mohamed-Amine-Saadani-CV.pdf" download className="btn-outline about-cv-btn">
+            📄 Download CV
+          </a>
         </div>
 
         {/* Right — detail cards */}

@@ -50,7 +50,7 @@ export interface ProjectCategory {
 export interface SkillCategory { icon: string; category: string; items: string[] }
 
 export interface ContactData {
-  email: string; linkedin: string; location: string
+  email: string; linkedin: string; github: string; location: string
 }
 
 export interface FooterData { text: string; subtext: string }
@@ -84,6 +84,7 @@ export const about: AboutData = {
     { icon: '💼', label: 'Latest Role', value: 'Product Tech Manager @ WayConnect',                    href: null },
     { icon: '✉️', label: 'Email',       value: 'mohamedaminesaadani79@gmail.com',                      href: 'mailto:mohamedaminesaadani79@gmail.com' },
     { icon: '🔗', label: 'LinkedIn',    value: 'linkedin.com/in/mohamed-amine-saadani',                href: 'https://www.linkedin.com/in/mohamed-amine-saadani/' },
+    { icon: '💻', label: 'GitHub',      value: 'github.com/SaadaniMohamedAmine',                      href: 'https://github.com/SaadaniMohamedAmine' },
   ],
   languages: [
     { name: 'Arabic',  level: 'Native', highlight: true  },
@@ -1316,6 +1317,7 @@ export const skills: SkillCategory[] = [
 export const contact: ContactData = {
   email:    'mohamedaminesaadani79@gmail.com',
   linkedin: 'https://www.linkedin.com/in/mohamed-amine-saadani/',
+  github:   'https://github.com/SaadaniMohamedAmine',
   location: 'Monastir, Tunisia',
 }
 
