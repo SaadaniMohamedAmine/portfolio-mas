@@ -155,7 +155,7 @@ export const experience: ExperienceItem[] = [
 export const projectCategories: ProjectCategory[] = [
   {
     id: 'ai', iconName: 'Bot', label: 'AI-Powered',
-    description: 'Applications intelligentes intégrant des LLMs, du traitement du langage naturel et des pipelines de données — de l\'analyse de code à la génération de contenu en passant par la transcription de réunions.',
+    description: 'Intelligent applications integrating LLMs, natural language processing and data pipelines — from code analysis to content generation to meeting transcription.',
     poweredBy: [
       { icon: 'Brain',    label: 'LLM'     },
       { icon: 'Sparkles', label: 'Gemini'  },
@@ -165,7 +165,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'frontend', iconName: 'Zap', label: 'Frontend Showcases',
-    description: 'Expériences UI haute-performance — design systems, data visualizations interactives, jeux browser et librairies d\'animation CSS — toutes optimisées pour les Core Web Vitals.',
+    description: 'High-performance UI experiences — design systems, interactive data visualizations, browser games and CSS animation libraries — all optimized for Core Web Vitals.',
     poweredBy: [
       { icon: 'Layers',   label: 'React'   },
       { icon: 'Gauge',    label: 'Vite'    },
@@ -175,7 +175,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'saas', iconName: 'LayoutDashboard', label: 'SaaS & Dashboards',
-    description: 'Plateformes SaaS complètes et tableaux de bord analytiques : CRM, e-learning, RH, e-commerce et marketing — construits pour la scalabilité et la conversion.',
+    description: 'Full-featured SaaS platforms and analytics dashboards: CRM, e-learning, HR, e-commerce and marketing — built for scalability and conversion.',
     poweredBy: [
       { icon: 'Database', label: 'MongoDB' },
       { icon: 'CreditCard', label: 'Stripe' },
@@ -185,7 +185,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'realtime', iconName: 'Radio', label: 'Real-Time',
-    description: 'Applications temps réel à haute disponibilité — matching géolocalisé, collaboration multi-utilisateurs, suivi de prix live — propulsées par WebSockets et Meteor.',
+    description: 'High-availability real-time applications — geolocated matching, multi-user collaboration, live price tracking — powered by WebSockets and Meteor.',
     poweredBy: [
       { icon: 'Wifi',     label: 'WebSocket' },
       { icon: 'MapPin',   label: 'Geo'     },
@@ -195,7 +195,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'devtools', iconName: 'Wrench', label: 'Developer Tools',
-    description: 'Outils construits pour les développeurs : scaffolding CLI, serveurs mock API et gestionnaires de snippets — pour accélérer le workflow et standardiser les pratiques.',
+    description: 'Tools built for developers: CLI scaffolding, mock API servers and snippet managers — to speed up workflow and standardize practices.',
     poweredBy: [
       { icon: 'Terminal', label: 'CLI'     },
       { icon: 'GitBranch', label: 'Git'   },
@@ -205,7 +205,7 @@ export const projectCategories: ProjectCategory[] = [
   },
   {
     id: 'product', iconName: 'Package', label: 'Product-Led',
-    description: 'Projets à impact produit mesurable — stratégie Agile, billing SaaS, PWA offline-first et funnels d\'onboarding optimisés pour la conversion trial-to-paid.',
+    description: 'Projects with measurable product impact — Agile strategy, SaaS billing, offline-first PWAs and onboarding funnels optimized for trial-to-paid conversion.',
     poweredBy: [
       { icon: 'Target',   label: 'Agile'  },
       { icon: 'Smartphone', label: 'PWA'  },
@@ -1316,8 +1316,8 @@ export const contact: ContactData = {
 }
 
 export const footer: FooterData = {
-  text:    '© 2025 Mohamed Amine Saadani · Senior Front-End Developer & Product Tech Manager',
-  subtext: 'Built with passion & React',
+  text:    '© 2026 Mohamed Amine Saadani · Senior Front-End Developer & Product Tech Manager',
+  subtext: 'Built with passion & Next.js',
 }
 
 export const chatSuggestions: string[] = ['Tech stack?', 'Open to work?', 'Key achievements?', 'Management experience?']
