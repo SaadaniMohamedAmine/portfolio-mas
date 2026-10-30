@@ -924,6 +924,7 @@ export const projects: ProjectItem[] = [
       live: 'https://siguilla-customer-bot.vercel.app/',
       playground: 'https://siguilla-customer-bot.vercel.app/demo',
       github: 'https://github.com/SaadaniMohamedAmine/siguilla-customer-bot',
+      videoEmbed: 'https://drive.google.com/file/d/1VNEOZFZN4byt3u2kB57oZ2dSedsww0i3/preview',
       capabilities: [
         { capability: 'Cited RAG Answers',               what: 'Every response streams with numbered citation seals; each seal links to the exact page or URL it was drawn from, listed under a "Sealed by N sources" line.' },
         { capability: 'Dual-AI Orchestrator',            what: 'Groq primary for generation, Gemini as automatic fallback before the first token streams — Gemini embeddings (768d) searched with pgvector HNSW.' },
