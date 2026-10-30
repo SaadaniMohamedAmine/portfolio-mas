@@ -898,6 +898,22 @@ export const projects: ProjectItem[] = [
     },
   },
   {
+    icon: 'ShieldCheck',
+    title: 'Sigilla',
+    description: 'No-code AI support agents trained on your docs and embedded on any site in one line — every answer sealed by its source, with live human handoff, conversation analytics, and a full multi-tenant SaaS shell.',
+    metrics: ['Dual-AI Engine', 'Cited RAG Answers', '<5 KB Widget', 'Human Handoff'],
+    stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Prisma 7', 'Neon Postgres', 'pgvector', 'Better Auth', 'Groq', 'Gemini', 'Stripe', 'Vercel Blob', 'next-intl', 'Vitest', 'Playwright'],
+    category: 'ai',
+    logoImage: '/sigilla-icon.svg',
+    published: true,
+    details: {
+      // Placeholder — the full detail page content comes in the next step
+      longDescription: 'No-code AI support agents trained on your docs and embedded on any site in one line — every answer sealed by its source, with live human handoff, conversation analytics, and a full multi-tenant SaaS shell.',
+      highlights: [],
+      status: 'In Progress',
+    },
+  },
+  {
     icon: 'FileText',
     title: 'AI Resume Analyzer',
     description: 'Upload a CV and a job description — AI scores the match, highlights gaps, and rewrites weak sections to boost application success.',
